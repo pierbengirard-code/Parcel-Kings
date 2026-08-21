@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#100d22">
+  <title>Parcel Kings — Chasse aux trésors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=41">
+  <script type="module" src="vendor/model-viewer.min.js"></script>
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Retour à l'accueil Parcel Kings">
+      <span class="brand-mark">PK</span>
+      <span><b>PARCEL</b><i>KINGS</i></span>
+    </a>
+    <div class="stats">
+      <div class="stat"><span>Solde</span><strong id="money">500 $</strong></div>
+      <div class="stat reputation-stat" tabindex="0"><span>Réputation ⓘ</span><strong id="reputation">0</strong><div class="reputation-tooltip" id="reputationTooltip" role="tooltip"></div></div>
+      <div class="level-wrap">
+        <div><span id="levelLabel">Niveau 1</span><span id="xpLabel">0 / 100 XP</span></div>
+        <div class="progress"><i id="xpBar"></i></div>
+      </div>
+      <button class="credit-button" id="addCreditsBtn">+ 1 000 $</button>
+    </div>
+    <button class="icon-button" id="soundBtn" title="Activer ou couper le son">♪</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-art garage-viewport" id="garageViewport">
+        <div class="showroom-bar"><span>NOUVEL ARRIVAGE DANS <b id="timer">04:00</b></span><div><button class="secondary" id="dailyBtn">Cadeau du jour <i id="giftDot"></i></button><button class="primary" id="scrollToLots">Voir les colis ↓</button></div></div>
+        <div class="premium-showcase-header" aria-live="polite">
+          <h2>MA VITRINE</h2>
+          <div><span class="collection-count-icon">◇</span><strong id="showcaseSceneCount">0</strong><small>OBJETS</small><i></i><span class="collection-value-icon">◆</span><small>VALEUR TOTALE</small><strong id="showcaseSceneValue">0 $</strong></div>
+        </div>
+        <div class="scene-hint">↔ MAINTIENS LE CLIC GAUCHE POUR TOURNER</div>
+        <div class="garage-scene" id="garageScene">
+          <div class="garage-shell">
+            <div class="garage-wall back-wall"><div class="neon-sign">PARCEL<br><b>KINGS</b></div><div class="shelf shelf-a"><i></i><i></i><i></i></div><div class="shelf shelf-b"><i></i><i></i></div></div>
+            <div class="garage-wall left-wall"></div>
+            <div class="garage-floor"><i></i><i></i><i></i><i></i></div>
+            <div class="garage-ceiling"><span></span></div>
+            <div class="container-3d" id="container3d">
+              <div class="container-side"></div><div class="container-top"></div>
+              <div class="container-inside">
+                <div class="gallery-signature" aria-hidden="true"><span>THE PRIVATE COLLECTION</span><i></i></div>
+                <div class="gallery-lights"><i></i><i></i><i></i><i></i></div>
+                <div class="gallery-backdrop"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                <div class="container-showcase-title">MA VITRINE</div>
+                <div class="scene-showcase" id="sceneShowcase"></div>
+                <div class="gallery-floor"><i></i></div>
+                <div class="gallery-ledger" aria-hidden="true"></div>
+              </div>
+              <button class="door door-left" id="doorLeft" aria-label="Ouvrir la vitrine"></button>
+              <button class="door door-right" id="doorRight" aria-label="Ouvrir la vitrine"></button>
+              <button class="closed-showcase-mark" id="showcaseMark" type="button" aria-label="Ouvrir la vitrine privée"><span>VITRINE</span><small>COLLECTION PRIVÉE</small></button>
+            </div>
+          </div>
+        </div>
+        <button class="container-control" id="containerControl"><span>◆</span> Ouvrir la vitrine</button>
+      </div>
+    </section>
+
+    <nav class="tabs" aria-label="Sections du jeu">
+      <button class="active" data-tab="market">Le dépôt <span id="lotCount">3</span></button>
+      <button data-tab="inventory">Mon stock <span id="inventoryCount">0</span></button>
+      <button data-tab="showcase">Ma vitrine <span id="showcaseCount">0</span></button>
+      <button data-tab="leaderboard">Classement</button>
+    </nav>
+
+    <section class="panel active" id="market">
+      <div class="section-heading">
+        <div><p class="eyebrow">ARRIVAGE DU JOUR</p><h2>Choisis ton prochain coup</h2></div>
+        <button class="text-button" id="refreshBtn">↻ Renouveler <small>50 $</small></button>
+      </div>
+      <div class="moon-counter" aria-label="Progression des cartons pour faire le tour de la Terre">
+        <div class="moon-counter-copy"><span>OBJECTIF TOUR DU MONDE</span><strong><b id="cartonsOpened">0</b> cartons empilés</strong><small><b id="moonTravelled">0</b> m parcourus · <b id="moonPercent">0,00000000</b> % du tour · carton de 40 cm · encore <b id="moonRemaining">40 075</b> km</small></div>
+        <div class="moon-route"><span class="earth">📍</span><div class="moon-track"><i id="moonProgress"></i><em id="moonParcel">📦</em></div><span class="moon">🌍</span></div>
+      </div>
+      <div class="lots" id="lots"></div>
+      <div class="tip"><span>🔒</span><p><b>Vente à l'aveugle</b>Tous les cartons sont identiques. Le prix change la valeur potentielle, jamais les probabilités de rareté.</p></div>
+      <div class="odds-panel">
+        <h3>Probabilités par ouverture</h3>
+        <div class="odds-grid">
+          <span class="odds sans-rarete"><i></i>Sans rareté <b>40 %</b><small>×0,2–0,8</small></span>
+          <span class="odds courant"><i></i>Courant <b>30 %</b><small>×0,8–1</small></span>
+          <span class="odds peu-commun"><i></i>Peu commun <b>20,89 %</b><small>×1–1,2</small></span>
+          <span class="odds rare"><i></i>Rare <b>6,5 %</b><small>×1,2–1,8</small></span>
+          <span class="odds exceptionnel"><i></i>Exceptionnel <b>2,5 %</b><small>×1,8–5</small></span>
+          <span class="odds legendaire"><i></i>Légendaire <b>0,1 %</b><small>×5–30</small></span>
+          <span class="odds unique"><i></i>Unique <b>0,01 %</b><small>×30–100</small></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="inventory">
+      <div class="section-heading"><div><p class="eyebrow">TON GARAGE</p><h2>Objets en stock</h2></div><div class="stock-value">Valeur estimée <b id="stockValue">0 $</b></div></div>
+      <div class="inventory-grid" id="inventoryGrid"></div>
+      <div class="empty-state" id="emptyInventory"><span>📦</span><h3>Ton garage est vide</h3><p>Ouvre un colis pour commencer ta collection.</p><button class="primary" data-go="market">Aller au dépôt</button></div>
+    </section>
+
+    <section class="panel" id="showcase">
+      <div class="section-heading"><div><p class="eyebrow">EXPOSITION PRIVÉE</p><h2>Ma vitrine</h2></div><div class="stock-value">Valeur conservée <b id="showcaseValue">0 $</b></div></div>
+      <p class="showcase-intro">Expose ici les objets que tu souhaites conserver sur le long terme. Ils restent disponibles et peuvent retourner au garage à tout moment.</p>
+      <div class="showcase-room"><div class="showcase-grid" id="showcaseGrid"></div></div>
+      <div class="empty-state" id="emptyShowcase"><span>🏛️</span><h3>Ta vitrine attend sa première pièce</h3><p>Depuis ton stock, choisis « Placer en vitrine ».</p><button class="primary" data-go="inventory">Voir mon stock</button></div>
+    </section>
+
+    <section class="panel" id="leaderboard">
+      <div class="section-heading"><div><p class="eyebrow">SAISON 01 · 12 JOURS</p><h2>Les rois de la revente</h2></div><div class="league">Ligue <b>Carton</b></div></div>
+      <div class="ranking-switch" role="group" aria-label="Type de classement">
+        <button class="active" data-ranking="sales">💰 Meilleures ventes</button>
+        <button data-ranking="showcase">🏛️ Valeur de la vitrine</button>
+      </div>
+      <div class="ranking-caption" id="rankingCaption">Chiffre d’affaires cumulé de la saison</div>
+      <div class="leaderboard" id="leaderboardList"></div>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+    <div class="modal" id="openingModal" role="dialog" aria-modal="true" aria-label="Ouverture du colis">
+      <button class="modal-close" id="closeModal">×</button>
+      <p class="eyebrow">OUVERTURE EN COURS</p>
+      <h2 id="modalTitle">Colis mystère</h2>
+      <div class="opening-stage" id="openingStage">
+        <div class="open-box parcel-opening" id="openBox"><model-viewer src="assets/models/colis-perdu-reference.glb?v=reference2" poster="assets/boxes/colis-perdu.png" alt="Colis perdu cabossé en 3D" camera-controls auto-rotate rotation-per-second="16deg" touch-action="none" interaction-prompt="none" shadow-intensity="1.7" shadow-softness=".85" exposure="1.15" tone-mapping="commerce" environment-image="neutral"></model-viewer></div>
+        <div class="suspense-scan" aria-hidden="true"><i></i><span>ANALYSE DU CONTENU</span></div>
+      </div>
+      <div class="reveal hidden" id="reveal"></div>
+      <div class="reveal-actions">
+        <button class="primary wide" id="openAction">Ouvrir le colis</button>
+        <button class="secondary sell-now" id="sellNowAction" hidden>Vendre tout de suite</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="game.js?v=63"></script>
+</body>
+</html>

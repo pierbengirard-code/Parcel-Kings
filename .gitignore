@@ -1,0 +1,8 @@
+.tools/
+node_modules/
+.recovery/
+.recovery-tools/
+.spreadsheet-work/
+outputs/
+*.tmp
+*.log

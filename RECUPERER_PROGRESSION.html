@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Récupération Parcel Kings</title>
+  <style>
+    body{margin:0;min-height:100vh;display:grid;place-items:center;background:#171329;color:#fff;font:16px system-ui,sans-serif}.card{width:min(520px,calc(100% - 40px));padding:36px;border:1px solid #51466e;border-radius:24px;background:#211b38;box-shadow:0 24px 80px #0008}h1{margin-top:0;color:#d2ff2f}li{margin:.55rem 0}button{width:100%;margin-top:20px;padding:16px;border:0;border-radius:12px;background:#d2ff2f;color:#171329;font-weight:900;font-size:16px;cursor:pointer}#status{color:#beb6d1}
+  </style>
+</head>
+<body><main class="card"><h1>Partie retrouvée</h1><p>La sauvegarde détectée contient :</p><ul><li>674 cartons ouverts</li><li>9 objets en vitrine</li><li>10 objets en stock</li><li>4 139 points de réputation</li><li>1 343,71 $ disponibles</li></ul><p id="status">Cliquez ci-dessous pour remplacer la partie remise à zéro.</p><button id="restore">Restaurer ma progression</button></main>
+<script>
+document.querySelector('#restore').onclick=async()=>{const status=document.querySelector('#status'),button=document.querySelector('#restore');button.disabled=true;status.textContent='Restauration en cours…';try{const response=await fetch('.recovery/save_candidate_1.json',{cache:'no-store'});if(!response.ok)throw new Error('Sauvegarde introuvable');const save=await response.json();save.savedAt=Date.now();save.saveVersion=2;localStorage.setItem('parcelKingsSave',JSON.stringify(save));status.textContent='Progression restaurée. Ouverture du jeu…';setTimeout(()=>location.href='jeu.html',700)}catch(error){status.textContent='Échec : '+error.message;button.disabled=false}}
+</script></body></html>
