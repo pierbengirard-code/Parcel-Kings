@@ -88,6 +88,33 @@ const ITEMS = [
   ,{name:"Spray anti-moustique",icon:"🦟",image:"assets/objects/spray-anti-moustique.png",cat:"Loisir",rarity:"sans-rarete",min:3,max:18}
   ,{name:"Billet pour voyager dans l'espace",icon:"🚀",image:"assets/objects/billet-espace.png",cat:"Loisir",rarity:"legendaire",uniqueKey:"billet-voyage-espace",fixedPrice:500000,min:500000,max:500000}
   ,{name:"DVD Lost · Saison 1",icon:"💿",image:"assets/objects/dvd-the-lost-saison1.png",cat:"Loisir",rarity:"peu-commun",min:45,max:160}
+  ,{name:"Miroir cassé",icon:"🪞",image:"assets/objects/miroir-casse.png",cat:"Maison",rarity:"sans-rarete",min:2,max:30}
+  ,{name:"Miroir avec contours en or",icon:"🪞",image:"assets/objects/miroir-contours-or.png",cat:"Maison",rarity:"rare",min:180,max:750}
+  ,{name:"Pistolet USP",icon:"🔫",image:"assets/objects/pistolet-usp.png",cat:"Loisir",rarity:"courant",min:35,max:140}
+  ,{name:"Multiprise",icon:"🔌",image:"assets/objects/multiprise.png",cat:"Maison",rarity:"sans-rarete",min:4,max:25}
+  ,{name:"Tournevis",icon:"🪛",image:"assets/objects/tournevis.png",cat:"Maison",rarity:"sans-rarete",min:2,max:18}
+  ,{name:"Briquet tempête",icon:"🔥",image:"assets/objects/briquet-tempete.png",cat:"Loisir",rarity:"peu-commun",min:60,max:220}
+  ,{name:"Gilet pare-balles",icon:"🦺",image:"assets/objects/gilet-pare-balles.png",cat:"Loisir",rarity:"courant",min:50,max:190}
+  ,{name:"Place de concert de Michael Jackson",icon:"🎟️",image:"assets/objects/ticket-concert-michael-jackson.png",cat:"Loisir",rarity:"legendaire",uniqueKey:"ticket-concert-michael-jackson-2009",fixedPrice:2009,min:2009,max:2009}
+  ,{name:"Skateboard",icon:"🛹",image:"assets/objects/skateboard.png",cat:"Loisir",rarity:"sans-rarete",min:8,max:55}
+  ,{name:"Lunettes connectées",icon:"👓",image:"assets/objects/lunettes-connectees.png",cat:"Loisir",rarity:"peu-commun",min:90,max:320}
+  ,{name:"Billet de 500 francs",icon:"💶",image:"assets/objects/billet-500-francs.png",cat:"Loisir",rarity:"exceptionnel",min:350,max:1800}
+  ,{name:"Boîte de briques · Retour vers le futur",icon:"🧱",image:"assets/objects/boite-briques-retro-futur.png",cat:"Loisir",rarity:"peu-commun",min:90,max:320}
+  ,{name:"Tête de lion empaillée",icon:"🦁",image:"assets/objects/tete-lion-empaillee.png",cat:"Loisir",rarity:"exceptionnel",min:500,max:2400}
+  ,{name:"Six bâtons de dynamite",icon:"🧨",image:"assets/objects/dynamite-6.png",cat:"Loisir",rarity:"rare",min:180,max:760}
+  ,{name:"Four micro-ondes",icon:"📻",image:"assets/objects/four-micro-ondes.png",cat:"Loisir",rarity:"sans-rarete",min:8,max:60}
+  ,{name:"Caquelon",icon:"🫕",image:"assets/objects/caquelon.png",cat:"Maison",rarity:"courant",min:35,max:130}
+  ,{name:"Slip de bain Tina Arena",icon:"🩲",image:"assets/objects/slip-bain-tina-arena.png",cat:"Loisir",rarity:"rare",min:170,max:720}
+  ,{name:"Robe d’avocat",icon:"⚖️",image:"assets/objects/robe-avocat.png",cat:"Vêtements",rarity:"peu-commun",min:85,max:280}
+  ,{name:"Tableau de Claude Monet",icon:"🖼️",image:"assets/objects/tableau-monet.png",cat:"Loisir",rarity:"unique",uniqueKey:"tableau-claude-monet",min:5000,max:22000}
+  ,{name:"Kalashnikov Airsoft",icon:"🎯",image:"assets/objects/kalashnikov-airsoft.png",cat:"Loisir",rarity:"peu-commun",min:100,max:380}
+  ,{name:"Casse-tête chinois du Japon",icon:"🧩",image:"assets/objects/casse-tete-japonais.png",cat:"Loisir",rarity:"rare",min:140,max:620}
+  ,{name:"Vraie dent de requin en plastique",icon:"🦈",image:"assets/objects/dent-requin-plastique.png",cat:"Loisir",rarity:"sans-rarete",min:1,max:15}
+  ,{name:"Figurine Ankylosaure",icon:"🦕",image:"assets/objects/figurine-ankylosaure.png",cat:"Loisir",rarity:"courant",min:25,max:110}
+  ,{name:"Taille-crayon pour feutre",icon:"✏️",image:"assets/objects/taille-feutre.png",cat:"Scolaire",rarity:"exceptionnel",min:280,max:1500}
+  ,{name:"Bouteille de plongée",icon:"🤿",image:"assets/objects/bouteille-plongee.png",cat:"Loisir",rarity:"courant",min:55,max:210}
+  ,{name:"Puzzle 1 pièce",icon:"🧩",image:"assets/objects/puzzle-1-piece.png",cat:"Loisir",rarity:"rare",min:150,max:650}
+  ,{name:"Le Saint-Suaire du Christ",icon:"📜",image:"assets/objects/saint-suaire.png",cat:"Vêtements",rarity:"unique",uniqueKey:"saint-suaire-du-christ",fixedPrice:0,min:0,max:0}
 ];
 const UNLIMITED_MONEY=false;
 // Les reconstructions IA complètes restent disponibles, mais leur géométrie
