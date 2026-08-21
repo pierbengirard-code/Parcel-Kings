@@ -6,3 +6,10 @@ node_modules/
 outputs/
 *.tmp
 *.log
+
+# Prototype 3D local en attente de validation (ne pas publier)
+/prototype-3d-mug.html
+/assets/models/prototypes/
+/tools/build_mug_rabbit_prototype.py
+/prototype-3d-vase.html
+/tools/build_vase_prototype.py

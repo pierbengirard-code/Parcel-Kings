@@ -458,5 +458,11 @@ body{background:linear-gradient(rgba(10,8,25,.91),rgba(10,8,25,.97)),url("assets
 .scene-showcase.gallery-dense .scene-rarity{bottom:3px;min-width:92px;padding:3px 8px;font-size:8px;letter-spacing:.35px}
 @media(max-width:560px){.scene-rarity{bottom:3px;min-width:74px;padding:3px 6px;font-size:7px;letter-spacing:.25px}}
 .hero .scene-showcase .scene-display{border-top-color:transparent!important}
+
+/* Comparaison instantanée avec les exemplaires déjà conservés. */
+.owned-object-note{position:relative;z-index:7;width:min(520px,92%);min-height:48px;margin:7px auto 5px;padding:7px 12px;display:flex;align-items:center;justify-content:center;gap:11px;border:1px solid color-mix(in srgb,var(--rarity) 48%,rgba(255,255,255,.1));border-radius:8px;background:linear-gradient(110deg,color-mix(in srgb,var(--rarity) 12%,#21192e),rgba(18,14,27,.96));box-shadow:0 0 18px color-mix(in srgb,var(--rarity) 10%,transparent),inset 0 1px rgba(255,255,255,.05);text-align:left}
+.owned-object-note>span{flex:0 0 auto;min-width:42px;padding:7px 8px;border-radius:7px;background:color-mix(in srgb,var(--rarity) 18%,#171220);color:color-mix(in srgb,var(--rarity) 78%,white);font:900 15px "Archivo Black";text-align:center}
+.owned-object-note>div{display:flex;min-width:0;flex-direction:column;gap:2px}.owned-object-note strong{color:#f4ecdf;font-size:9px;letter-spacing:1px}.owned-object-note small{color:#bcb3c7;font-size:9px;line-height:1.35}.owned-object-note small b{font-size:10px}.owned-object-note .positive{color:#bfff32}.owned-object-note .negative{color:#ff7582}
+@media(max-width:560px){.owned-object-note{width:96%;gap:7px;padding:6px 8px}.owned-object-note>span{min-width:36px;padding:6px;font-size:12px}.owned-object-note strong{font-size:7px}.owned-object-note small{font-size:7px}.owned-object-note small b{font-size:8px}}
 .hero .gallery-lights{display:none!important}
 .hero{min-height:0!important}
