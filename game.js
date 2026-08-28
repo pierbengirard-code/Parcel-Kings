@@ -138,7 +138,7 @@ const RARITIES=[
   {key:"unique",label:"Unique",chance:.01,min:30,max:100,color:"#ff8a1f"}
 ];
 const COLLECTIONS=[
-  {key:"dinosaure",name:"Dinosaure",description:"Rassemble les vestiges et objets consacrés aux géants disparus.",badgeKey:"chasseur-dinosaures",badgeName:"Chasseur de dinosaures",badgeIcon:"☠",ready:false,plannedSlots:4}
+  {key:"dinosaure",name:"Dinosaure",description:"Rassemble les vestiges et objets consacrés aux géants disparus.",badgeKey:"chasseur-dinosaures",badgeName:"Chasseur de dinosaures",badgeIcon:"☠",ready:false,plannedSlots:10}
 ];
 const REPUTATION_LEVELS=[
   {min:0,title:"Nouveau chineur",refresh:50,gift:150,perk:"Accès au dépôt public"},
