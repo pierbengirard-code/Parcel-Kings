@@ -143,11 +143,11 @@ const PARCEL_PLATFORMS=["A****n","E**y","V*****d","A**E******s","C********t","M*
 const RARITIES=[
   {key:"sans-rarete",label:"Sans rareté",chance:40,min:.2,max:.8,color:"#9ca3af"},
   {key:"courant",label:"Courant",chance:30,min:.8,max:1,color:"#f8fafc"},
-  {key:"peu-commun",label:"Peu commun",chance:20.89,min:1,max:1.2,color:"#3b82f6"},
-  {key:"rare",label:"Rare",chance:6.5,min:1.2,max:1.8,color:"#a855f7"},
-  {key:"exceptionnel",label:"Exceptionnel",chance:2.5,min:1.8,max:5,color:"#ef4444"},
+  {key:"peu-commun",label:"Peu commun",chance:20.89,min:1,max:1.5,color:"#3b82f6"},
+  {key:"rare",label:"Rare",chance:6.5,min:1.5,max:2,color:"#a855f7"},
+  {key:"exceptionnel",label:"Exceptionnel",chance:2.5,min:2,max:5,color:"#ef4444"},
   {key:"legendaire",label:"Légendaire",chance:.1,min:5,max:30,color:"#ffd447"},
-  {key:"unique",label:"Unique",chance:.01,min:30,max:100,color:"#ff8a1f"}
+  {key:"unique",label:"Unique",chance:.01,min:30,max:50,color:"#ff8a1f"}
 ];
 const COLLECTIONS=[
   {key:"dinosaure",name:"Dinosaure",description:"Rassemble les vestiges et objets consacrés aux géants disparus.",badgeKey:"chasseur-dinosaures",badgeName:"Chasseur de dinosaures",badgeImage:"assets/badges/chasseur-dinosaures.png",badgeIcon:'<img src="assets/badges/chasseur-dinosaures.png" alt="Crâne de T-Rex doré">',ready:true,plannedSlots:10}
