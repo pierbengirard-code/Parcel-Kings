@@ -454,9 +454,9 @@ body{background:linear-gradient(rgba(10,8,25,.91),rgba(10,8,25,.97)),url("assets
 
 /* Rareté visible dans chaque écrin, sans point lumineux blanc */
 .hero .scene-showcase .scene-display:after{display:none!important}
-.scene-rarity{position:absolute;z-index:8;left:50%;bottom:8px;min-width:116px;max-width:96%;padding:4px 15px;border:1px solid color-mix(in srgb,var(--rarity,#9ca3af) 78%,transparent);border-radius:999px;background:color-mix(in srgb,var(--rarity,#9ca3af) 18%,rgba(3,3,5,.96));box-shadow:0 0 14px color-mix(in srgb,var(--rarity,#9ca3af) 24%,transparent),inset 0 1px rgba(255,255,255,.09);transform:translateX(-50%);color:color-mix(in srgb,var(--rarity,#9ca3af) 72%,white);font-size:10px;font-weight:900;line-height:1.1;letter-spacing:.75px;text-align:center;text-shadow:0 1px 3px #000;text-transform:uppercase;white-space:nowrap;pointer-events:none}
-.scene-showcase.gallery-dense .scene-rarity{bottom:3px;min-width:92px;padding:3px 8px;font-size:8px;letter-spacing:.35px}
-@media(max-width:560px){.scene-rarity{bottom:3px;min-width:74px;padding:3px 6px;font-size:7px;letter-spacing:.25px}}
+.scene-showcase .scene-display .scene-rarity{position:absolute;z-index:8;left:50%;bottom:8px;display:inline-flex!important;min-width:68px;max-width:calc(100% - 20px);align-items:center;justify-content:center;padding:3px 9px;border:1px solid color-mix(in srgb,var(--rarity,#9ca3af) 62%,transparent);border-radius:999px;background:linear-gradient(180deg,color-mix(in srgb,var(--rarity,#9ca3af) 14%,rgba(18,17,22,.9)),rgba(4,4,7,.92));box-shadow:0 3px 9px rgba(0,0,0,.38),0 0 8px color-mix(in srgb,var(--rarity,#9ca3af) 14%,transparent),inset 0 1px rgba(255,255,255,.08);backdrop-filter:blur(5px);transform:translateX(-50%);color:color-mix(in srgb,var(--rarity,#9ca3af) 64%,white);font-size:7px!important;font-weight:850;line-height:1!important;letter-spacing:.8px;text-align:center;text-shadow:0 1px 2px #000;text-transform:uppercase;white-space:nowrap;pointer-events:none}
+.scene-showcase.gallery-dense .scene-display .scene-rarity{bottom:4px;min-width:58px;padding:2px 7px;font-size:6px!important;letter-spacing:.55px}
+@media(max-width:560px){.scene-showcase .scene-display .scene-rarity{bottom:3px;min-width:52px;max-width:calc(100% - 6px);padding:2px 5px;font-size:5.5px!important;letter-spacing:.4px}}
 .hero .scene-showcase .scene-display{border-top-color:transparent!important}
 
 /* Collections, badges et mode de test */
