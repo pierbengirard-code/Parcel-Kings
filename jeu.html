@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=55">
+  <link rel="stylesheet" href="styles.css?v=56">
   <script type="module" src="vendor/model-viewer.min.js"></script>
 </head>
 <body>
@@ -40,29 +40,12 @@
         </div>
         <div class="scene-hint">CLIQUE SUR UN OBJET POUR L’AGRANDIR</div>
         <div class="garage-scene" id="garageScene">
-          <div class="garage-shell">
-            <div class="garage-wall back-wall"><div class="neon-sign">PARCEL<br><b>KINGS</b></div><div class="shelf shelf-a"><i></i><i></i><i></i></div><div class="shelf shelf-b"><i></i><i></i></div></div>
-            <div class="garage-wall left-wall"></div>
-            <div class="garage-floor"><i></i><i></i><i></i><i></i></div>
-            <div class="garage-ceiling"><span></span></div>
-            <div class="container-3d" id="container3d">
-              <div class="container-side"></div><div class="container-top"></div>
-              <div class="container-inside">
-                <div class="gallery-signature" aria-hidden="true"><span>THE PRIVATE COLLECTION</span><i></i></div>
-                <div class="gallery-lights"><i></i><i></i><i></i><i></i></div>
-                <div class="gallery-backdrop"><span></span><span></span><span></span><span></span><span></span><span></span></div>
-                <div class="container-showcase-title">MA VITRINE</div>
-                <div class="scene-showcase" id="sceneShowcase"></div>
-                <div class="gallery-floor"><i></i></div>
-                <div class="gallery-ledger" aria-hidden="true"></div>
-              </div>
-              <button class="door door-left" id="doorLeft" aria-label="Ouvrir la vitrine"></button>
-              <button class="door door-right" id="doorRight" aria-label="Ouvrir la vitrine"></button>
-              <button class="closed-showcase-mark" id="showcaseMark" type="button" aria-label="Ouvrir la vitrine privée"><span>VITRINE</span><small>COLLECTION PRIVÉE</small></button>
+          <div class="container-3d open" id="container3d">
+            <div class="container-inside">
+              <div class="scene-showcase" id="sceneShowcase"></div>
             </div>
           </div>
         </div>
-        <button class="container-control" id="containerControl"><span>◆</span> Ouvrir la vitrine</button>
       </div>
     </section>
 
@@ -155,6 +138,6 @@
   </div>
 
   <div class="toast" id="toast"></div>
-  <script src="game.js?v=73"></script>
+  <script src="game.js?v=74"></script>
 </body>
 </html>
