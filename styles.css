@@ -503,3 +503,12 @@ body{background:linear-gradient(rgba(10,8,25,.91),rgba(10,8,25,.97)),url("assets
 .hero .scene-showcase,.hero .garage-viewport.expanded .scene-showcase,.hero .scene-showcase.gallery-dense{grid-template-columns:repeat(4,minmax(0,1fr))!important;grid-template-rows:repeat(2,minmax(0,1fr))!important;grid-auto-rows:minmax(0,1fr)!important}
 @media(max-width:850px){.showcase-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.showcase-grid{grid-template-columns:1fr}}
+
+/* Cadrage intégral et fermeture nette de la vitrine. */
+.hero .scene-showcase .scene-display,.hero .scene-showcase.gallery-dense .scene-display{padding:8px 12px 24px;overflow:hidden}
+.hero .scene-showcase .scene-display .scene-object-image,.hero .scene-showcase.gallery-dense .scene-display .scene-object-image{width:92%;height:88%;max-width:92%;max-height:88%;margin:2% auto 10%;object-fit:contain;object-position:center;transform:scale(.96)!important;filter:drop-shadow(0 12px 9px rgba(0,0,0,.62)) contrast(1.035) saturate(1.055)}
+.hero .scene-showcase .scene-display:hover .scene-object-image{transform:scale(1)!important}
+.container-3d:not(.open) .scene-showcase .scene-display{visibility:hidden;opacity:0!important;transform:translateY(8px) scale(.985)!important;transition:opacity .1s 0s,transform .12s 0s,visibility 0s .12s!important}
+.container-3d:not(.open) .scene-rarity{visibility:hidden!important;opacity:0!important;transition:none!important}
+.container-3d:not(.open) .gallery-backdrop,.container-3d:not(.open) .gallery-floor,.container-3d:not(.open) .gallery-signature,.container-3d:not(.open) .gallery-ledger,.container-3d:not(.open) .container-showcase-title{opacity:0!important;transition-delay:0s!important}
+@media(max-width:560px){.hero .scene-showcase .scene-display,.hero .scene-showcase.gallery-dense .scene-display{padding:4px 5px 15px}.hero .scene-showcase .scene-display .scene-object-image,.hero .scene-showcase.gallery-dense .scene-display .scene-object-image{width:90%;height:86%;max-width:90%;max-height:86%;margin:2% auto 12%}}
