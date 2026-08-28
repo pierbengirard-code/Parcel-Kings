@@ -512,3 +512,8 @@ body{background:linear-gradient(rgba(10,8,25,.91),rgba(10,8,25,.97)),url("assets
 .container-3d:not(.open) .scene-rarity{visibility:hidden!important;opacity:0!important;transition:none!important}
 .container-3d:not(.open) .gallery-backdrop,.container-3d:not(.open) .gallery-floor,.container-3d:not(.open) .gallery-signature,.container-3d:not(.open) .gallery-ledger,.container-3d:not(.open) .container-showcase-title{opacity:0!important;transition-delay:0s!important}
 @media(max-width:560px){.hero .scene-showcase .scene-display,.hero .scene-showcase.gallery-dense .scene-display{padding:4px 5px 15px}.hero .scene-showcase .scene-display .scene-object-image,.hero .scene-showcase.gallery-dense .scene-display .scene-object-image{width:90%;height:86%;max-width:90%;max-height:86%;margin:2% auto 12%}}
+
+/* Identification immédiate des objets appartenant à une collection. */
+.reveal-labels{position:relative;z-index:7;display:flex;align-items:center;justify-content:center;gap:7px;flex-wrap:wrap;margin:0 auto 7px}.reveal-labels .rarity-label{margin:0!important}
+.collection-label{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border:1px solid rgba(227,184,87,.64);border-radius:999px;background:linear-gradient(180deg,rgba(100,72,27,.72),rgba(31,22,13,.94));box-shadow:0 4px 13px rgba(0,0,0,.38),0 0 12px rgba(227,184,87,.13),inset 0 1px rgba(255,244,197,.12);color:#f2d785;font-size:9px;font-weight:900;line-height:1;letter-spacing:1px;text-shadow:0 1px 2px #000;white-space:nowrap}.collection-label i{color:#fff0a8;font-size:8px;font-style:normal;text-shadow:0 0 7px #eec85c}
+@media(max-width:560px){.reveal-labels{gap:5px}.collection-label{padding:4px 8px;font-size:7px;letter-spacing:.7px}}
