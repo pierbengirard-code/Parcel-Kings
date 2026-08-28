@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=48">
+  <link rel="stylesheet" href="styles.css?v=49">
   <script type="module" src="vendor/model-viewer.min.js"></script>
 </head>
 <body>
@@ -38,7 +38,7 @@
           <h2>MA VITRINE</h2>
           <div><span class="collection-count-icon">◇</span><strong id="showcaseSceneCount">0</strong><small>OBJETS</small><i></i><span class="collection-value-icon">◆</span><small>VALEUR TOTALE</small><strong id="showcaseSceneValue">0 $</strong></div>
         </div>
-        <div class="scene-hint">↔ MAINTIENS LE CLIC GAUCHE POUR TOURNER</div>
+        <div class="scene-hint">CLIQUE SUR UN OBJET POUR L’AGRANDIR</div>
         <div class="garage-scene" id="garageScene">
           <div class="garage-shell">
             <div class="garage-wall back-wall"><div class="neon-sign">PARCEL<br><b>KINGS</b></div><div class="shelf shelf-a"><i></i><i></i><i></i></div><div class="shelf shelf-b"><i></i><i></i></div></div>
@@ -70,6 +70,8 @@
       <button class="active" data-tab="market">Le dépôt <span id="lotCount">3</span></button>
       <button data-tab="inventory">Mon stock <span id="inventoryCount">0</span></button>
       <button data-tab="showcase">Ma vitrine <span id="showcaseCount">0</span></button>
+      <button data-tab="collections">Collection <span id="collectionCount">1</span></button>
+      <button data-tab="badges">Badge <span id="badgeCount">0</span></button>
       <button data-tab="leaderboard">Classement</button>
     </nav>
 
@@ -87,13 +89,13 @@
       <div class="odds-panel">
         <h3>Probabilités par ouverture</h3>
         <div class="odds-grid">
-          <span class="odds sans-rarete"><i></i>Sans rareté <b>40 %</b><small>×0,2–0,8</small></span>
-          <span class="odds courant"><i></i>Courant <b>30 %</b><small>×0,8–1</small></span>
-          <span class="odds peu-commun"><i></i>Peu commun <b>20,89 %</b><small>×1–1,2</small></span>
-          <span class="odds rare"><i></i>Rare <b>6,5 %</b><small>×1,2–1,8</small></span>
-          <span class="odds exceptionnel"><i></i>Exceptionnel <b>2,5 %</b><small>×1,8–5</small></span>
-          <span class="odds legendaire"><i></i>Légendaire <b>0,1 %</b><small>×5–30</small></span>
-          <span class="odds unique"><i></i>Unique <b>0,01 %</b><small>×30–100</small></span>
+          <button class="odds sans-rarete" data-test-rarity="sans-rarete" title="Tester un objet Sans rareté"><i></i>Sans rareté <b>40 %</b><small>×0,2–0,8</small></button>
+          <button class="odds courant" data-test-rarity="courant" title="Tester un objet Courant"><i></i>Courant <b>30 %</b><small>×0,8–1</small></button>
+          <button class="odds peu-commun" data-test-rarity="peu-commun" title="Tester un objet Peu commun"><i></i>Peu commun <b>20,89 %</b><small>×1–1,2</small></button>
+          <button class="odds rare" data-test-rarity="rare" title="Tester un objet Rare"><i></i>Rare <b>6,5 %</b><small>×1,2–1,8</small></button>
+          <button class="odds exceptionnel" data-test-rarity="exceptionnel" title="Tester un objet Exceptionnel"><i></i>Exceptionnel <b>2,5 %</b><small>×1,8–5</small></button>
+          <button class="odds legendaire" data-test-rarity="legendaire" title="Tester un objet Légendaire"><i></i>Légendaire <b>0,1 %</b><small>×5–30</small></button>
+          <button class="odds unique" data-test-rarity="unique" title="Tester un objet Unique"><i></i>Unique <b>0,01 %</b><small>×30–100</small></button>
         </div>
       </div>
     </section>
@@ -109,6 +111,19 @@
       <p class="showcase-intro">Expose ici les objets que tu souhaites conserver sur le long terme. Ils restent disponibles et peuvent retourner au garage à tout moment.</p>
       <div class="showcase-room"><div class="showcase-grid" id="showcaseGrid"></div></div>
       <div class="empty-state" id="emptyShowcase"><span>🏛️</span><h3>Ta vitrine attend sa première pièce</h3><p>Depuis ton stock, choisis « Placer en vitrine ».</p><button class="primary" data-go="inventory">Voir mon stock</button></div>
+    </section>
+
+    <section class="panel" id="collections">
+      <div class="section-heading"><div><p class="eyebrow">ALBUM DE DÉCOUVERTES</p><h2>Mes collections</h2></div></div>
+      <p class="collection-intro">Les silhouettes se révèlent dès qu’un objet est découvert. Un contour blanc indique qu’au moins un exemplaire se trouve encore dans ton stock ou ta vitrine.</p>
+      <div class="collections-grid" id="collectionsGrid"></div>
+    </section>
+
+    <section class="panel" id="badges">
+      <div class="section-heading"><div><p class="eyebrow">TROPHÉES PERMANENTS</p><h2>Mes badges</h2></div></div>
+      <p class="collection-intro">Une fois remporté, un badge reste définitivement acquis, même si les objets correspondants sont ensuite revendus.</p>
+      <div class="badges-grid" id="badgesGrid"></div>
+      <div class="empty-state" id="emptyBadges"><span>🏅</span><h3>Aucun badge pour le moment</h3><p>Complète une collection finalisée pour obtenir ton premier trophée.</p><button class="primary" data-go="collections">Voir les collections</button></div>
     </section>
 
     <section class="panel" id="leaderboard">
@@ -140,6 +155,6 @@
   </div>
 
   <div class="toast" id="toast"></div>
-  <script src="game.js?v=66"></script>
+  <script src="game.js?v=67"></script>
 </body>
 </html>
