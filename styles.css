@@ -497,3 +497,9 @@ body{background:linear-gradient(rgba(10,8,25,.91),rgba(10,8,25,.97)),url("assets
 @media(max-width:560px){.collection-slots{grid-template-columns:repeat(2,minmax(0,1fr));padding:14px}.section-tools{align-items:flex-end;flex-direction:column;gap:7px}.quality-filter{padding:8px 10px;font-size:8px}}
 .mini-badge>span{overflow:hidden;padding:0;background:radial-gradient(circle,#ffe68b,#8d5712)}
 .mini-badge>span img,.badge-medallion img,.badge-medallion span img{display:block;width:100%;height:100%;object-fit:contain;border-radius:50%}
+
+/* Vitrine : huit emplacements premium répartis sur deux rangées de quatre. */
+.showcase-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.hero .scene-showcase,.hero .garage-viewport.expanded .scene-showcase,.hero .scene-showcase.gallery-dense{grid-template-columns:repeat(4,minmax(0,1fr))!important;grid-template-rows:repeat(2,minmax(0,1fr))!important;grid-auto-rows:minmax(0,1fr)!important}
+@media(max-width:850px){.showcase-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.showcase-grid{grid-template-columns:1fr}}

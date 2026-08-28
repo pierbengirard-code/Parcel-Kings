@@ -168,7 +168,25 @@ let state=load(); let selectedLot=null; let revealedItem=null; let modalReturnTa
 const $=s=>document.querySelector(s); const $$=s=>document.querySelectorAll(s);
 const today=()=>new Date().toISOString().slice(0,10);
 if(state.dailyDate!==today())state.dailyClaimed=false;
-function hydrateSave(saved){const loaded={...freshState(),...(saved||{}),saveVersion:SAVE_VERSION};if(saved?.lotFormatVersion!==LOT_FORMAT_VERSION){loaded.lots=[];loaded.lotFormatVersion=LOT_FORMAT_VERSION}["inventory","showcase"].forEach(zone=>{loaded[zone]=Array.isArray(loaded[zone])?loaded[zone]:[];loaded[zone]=loaded[zone].map(item=>{const source=ITEMS.find(x=>(x.uniqueKey&&x.uniqueKey===item.uniqueKey)||x.name===item.name);return source?{...item,rarity:source.rarity,...(source.image?{image:source.image}:{}),...(source.model?{model:source.model}:{}),...(source.nativeModel?{nativeModel:source.nativeModel}:{}),...(source.true3D?{true3D:true}:{})}:item})});if(loaded.showcase.length>SHOWCASE_LIMIT)loaded.inventory.push(...loaded.showcase.splice(SHOWCASE_LIMIT));loaded.badges=Array.isArray(loaded.badges)?loaded.badges:[];loaded.collectionDiscoveries=Array.isArray(loaded.collectionDiscoveries)?[...new Set(loaded.collectionDiscoveries)]:[];const owned=[...loaded.inventory,...loaded.showcase].map(item=>item.name),legacyIcons=Array.isArray(loaded.found)?loaded.found:[],legacyNames=ITEMS.filter(item=>legacyIcons.includes(item.icon)).map(item=>item.name);loaded.discoveredItems=[...new Set([...(Array.isArray(loaded.discoveredItems)?loaded.discoveredItems:[]),...owned,...legacyNames])];return loaded}
+function hydrateSave(saved){
+  const loaded={...freshState(),...(saved||{}),saveVersion:SAVE_VERSION};
+  if(saved?.lotFormatVersion!==LOT_FORMAT_VERSION){loaded.lots=[];loaded.lotFormatVersion=LOT_FORMAT_VERSION}
+  ["inventory","showcase"].forEach(zone=>{
+    loaded[zone]=Array.isArray(loaded[zone])?loaded[zone]:[];
+    loaded[zone]=loaded[zone].map(item=>{
+      const source=ITEMS.find(x=>(x.uniqueKey&&x.uniqueKey===item.uniqueKey)||x.name===item.name);
+      return source?{...item,rarity:source.rarity,...(source.image?{image:source.image}:{}),...(source.model?{model:source.model}:{}),...(source.nativeModel?{nativeModel:source.nativeModel}:{}),...(source.true3D?{true3D:true}:{})}:item
+    })
+  });
+  if(loaded.showcase.length>SHOWCASE_LIMIT)loaded.inventory.push(...loaded.showcase.splice(SHOWCASE_LIMIT));
+  loaded.badges=Array.isArray(loaded.badges)?loaded.badges:[];
+  const owned=[...loaded.inventory,...loaded.showcase].map(item=>item.name);
+  const ownedCollectionItems=ITEMS.filter(item=>owned.includes(item.name)&&(item.collection||item.collections?.length)).map(item=>item.name);
+  loaded.collectionDiscoveries=[...new Set([...(Array.isArray(loaded.collectionDiscoveries)?loaded.collectionDiscoveries:[]),...ownedCollectionItems])];
+  const legacyIcons=Array.isArray(loaded.found)?loaded.found:[],legacyNames=ITEMS.filter(item=>legacyIcons.includes(item.icon)).map(item=>item.name);
+  loaded.discoveredItems=[...new Set([...(Array.isArray(loaded.discoveredItems)?loaded.discoveredItems:[]),...owned,...legacyNames])];
+  return loaded
+}
 function load(){try{const saved=JSON.parse(localStorage.getItem(SAVE_KEY));return saved?hydrateSave(saved):freshState()}catch{return freshState()}}
 function openSaveDb(){return new Promise((resolve,reject)=>{if(!window.indexedDB)return reject(new Error("IndexedDB indisponible"));const request=indexedDB.open(SAVE_DB,1);request.onupgradeneeded=()=>{if(!request.result.objectStoreNames.contains(SAVE_STORE))request.result.createObjectStore(SAVE_STORE)};request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error)})}
 async function writeBackup(snapshot){try{const db=await openSaveDb(),transaction=db.transaction(SAVE_STORE,"readwrite");transaction.objectStore(SAVE_STORE).put(snapshot,"main");await new Promise((resolve,reject)=>{transaction.oncomplete=resolve;transaction.onerror=()=>reject(transaction.error);transaction.onabort=()=>reject(transaction.error)});db.close()}catch{}}
