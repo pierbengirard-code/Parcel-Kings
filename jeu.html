@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=49">
+  <link rel="stylesheet" href="styles.css?v=50">
   <script type="module" src="vendor/model-viewer.min.js"></script>
 </head>
 <body>
@@ -101,14 +101,14 @@
     </section>
 
     <section class="panel" id="inventory">
-      <div class="section-heading"><div><p class="eyebrow">TON GARAGE</p><h2>Objets en stock</h2></div><div class="stock-value">Valeur estimée <b id="stockValue">0 $</b></div></div>
+      <div class="section-heading"><div><p class="eyebrow">TON GARAGE</p><h2>Objets en stock</h2></div><div class="section-tools"><button class="quality-filter" id="inventoryFilter" type="button">Filtre · Qualité ↓</button><div class="stock-value">Valeur estimée <b id="stockValue">0 $</b></div></div></div>
       <div class="inventory-grid" id="inventoryGrid"></div>
       <div class="empty-state" id="emptyInventory"><span>📦</span><h3>Ton garage est vide</h3><p>Ouvre un colis pour commencer ta collection.</p><button class="primary" data-go="market">Aller au dépôt</button></div>
     </section>
 
     <section class="panel" id="showcase">
-      <div class="section-heading"><div><p class="eyebrow">EXPOSITION PRIVÉE</p><h2>Ma vitrine</h2></div><div class="stock-value">Valeur conservée <b id="showcaseValue">0 $</b></div></div>
-      <p class="showcase-intro">Expose ici les objets que tu souhaites conserver sur le long terme. Ils restent disponibles et peuvent retourner au garage à tout moment.</p>
+      <div class="section-heading"><div><p class="eyebrow">EXPOSITION PRIVÉE</p><h2>Ma vitrine</h2></div><div class="section-tools"><button class="quality-filter" id="showcaseFilter" type="button">Filtre · Qualité ↓</button><div class="stock-value">Valeur conservée <b id="showcaseValue">0 $</b></div></div></div>
+      <p class="showcase-intro">Expose ici jusqu’à 8 objets que tu souhaites conserver sur le long terme. Ils restent disponibles et peuvent retourner au garage à tout moment.</p>
       <div class="showcase-room"><div class="showcase-grid" id="showcaseGrid"></div></div>
       <div class="empty-state" id="emptyShowcase"><span>🏛️</span><h3>Ta vitrine attend sa première pièce</h3><p>Depuis ton stock, choisis « Placer en vitrine ».</p><button class="primary" data-go="inventory">Voir mon stock</button></div>
     </section>
@@ -155,6 +155,6 @@
   </div>
 
   <div class="toast" id="toast"></div>
-  <script src="game.js?v=68"></script>
+  <script src="game.js?v=69"></script>
 </body>
 </html>
