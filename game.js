@@ -111,6 +111,15 @@ const ITEMS = [
   ,{name:"Casse-tête chinois du Japon",icon:"🧩",image:"assets/objects/casse-tete-japonais.png",cat:"Loisir",rarity:"rare",min:140,max:620}
   ,{name:"Vraie dent de requin en plastique",icon:"🦈",image:"assets/objects/dent-requin-plastique.png",cat:"Loisir",rarity:"sans-rarete",min:1,max:15}
   ,{name:"Figurine Ankylosaure",icon:"🦕",image:"assets/objects/figurine-ankylosaure.png",cat:"Loisir",rarity:"courant",collection:"dinosaure",min:25,max:110}
+  ,{name:"Figurine de Diplodocus",icon:"🦕",image:"assets/objects/figurine-diplodocus.png",cat:"Loisir",rarity:"courant",collection:"dinosaure",min:25,max:110}
+  ,{name:"Figurine d’Aquilops",icon:"🦕",image:"assets/objects/figurine-aquilops.png",cat:"Loisir",rarity:"courant",collection:"dinosaure",min:25,max:110}
+  ,{name:"Figurine de Vélociraptor",icon:"🦖",image:"assets/objects/figurine-velociraptor.png",cat:"Loisir",rarity:"courant",collection:"dinosaure",min:25,max:110}
+  ,{name:"Figurine de Tricératops",icon:"🦕",image:"assets/objects/figurine-triceratops.png",cat:"Loisir",rarity:"peu-commun",collection:"dinosaure",min:40,max:150}
+  ,{name:"Figurine de Stégosaure",icon:"🦕",image:"assets/objects/figurine-stegosaure.png",cat:"Loisir",rarity:"peu-commun",collection:"dinosaure",min:40,max:150}
+  ,{name:"Figurine de Ptérodactyle",icon:"🪽",image:"assets/objects/figurine-pterodactyle.png",cat:"Loisir",rarity:"peu-commun",collection:"dinosaure",min:40,max:150}
+  ,{name:"Figurine de Brachiosaure",icon:"🦕",image:"assets/objects/figurine-brachiosaure.png",cat:"Loisir",rarity:"rare",collection:"dinosaure",min:90,max:260}
+  ,{name:"Figurine de T-Rex",icon:"🦖",image:"assets/objects/figurine-t-rex.png",cat:"Loisir",rarity:"rare",collection:"dinosaure",min:90,max:260}
+  ,{name:"Figurine de poulet",icon:"🐔",image:"assets/objects/figurine-poulet-dent.png",cat:"Loisir",rarity:"exceptionnel",collection:"dinosaure",min:250,max:580}
   ,{name:"Taille-crayon pour feutre",icon:"✏️",image:"assets/objects/taille-feutre.png",cat:"Scolaire",rarity:"exceptionnel",min:280,max:1500}
   ,{name:"Bouteille de plongée",icon:"🤿",image:"assets/objects/bouteille-plongee.png",cat:"Loisir",rarity:"courant",min:55,max:210}
   ,{name:"Puzzle 1 pièce",icon:"🧩",image:"assets/objects/puzzle-1-piece.png",cat:"Loisir",rarity:"rare",min:150,max:650}
@@ -138,7 +147,7 @@ const RARITIES=[
   {key:"unique",label:"Unique",chance:.01,min:30,max:100,color:"#ff8a1f"}
 ];
 const COLLECTIONS=[
-  {key:"dinosaure",name:"Dinosaure",description:"Rassemble les vestiges et objets consacrés aux géants disparus.",badgeKey:"chasseur-dinosaures",badgeName:"Chasseur de dinosaures",badgeIcon:"☠",ready:false,plannedSlots:10}
+  {key:"dinosaure",name:"Dinosaure",description:"Rassemble les vestiges et objets consacrés aux géants disparus.",badgeKey:"chasseur-dinosaures",badgeName:"Chasseur de dinosaures",badgeIcon:"☠",ready:true,plannedSlots:10}
 ];
 const REPUTATION_LEVELS=[
   {min:0,title:"Nouveau chineur",refresh:50,gift:150,perk:"Accès au dépôt public"},
