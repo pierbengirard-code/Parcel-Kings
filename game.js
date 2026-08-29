@@ -1,4 +1,4 @@
-const ITEMS = [
+const LEGACY_ITEMS = [
   {name:"Game Boy Color",icon:"🎮",image:"assets/objects/game-boy-color.png",model:"assets/models/game-boy-color.glb",cat:"Rétro gaming",rarity:"peu-commun",min:120,max:240},
   {name:"Cassette collector",icon:"📼",image:"assets/objects/cassette-collector.png",model:"assets/models/cassette-collector.glb",cat:"Rétro gaming",rarity:"sans-rarete",min:18,max:55},
   {name:"Manette vintage",icon:"🕹️",image:"assets/objects/manette-vintage.png",model:"assets/models/manette-vintage.glb",cat:"Rétro gaming",rarity:"courant",min:45,max:95},
@@ -125,6 +125,7 @@ const ITEMS = [
   ,{name:"Puzzle 1 pièce",icon:"🧩",image:"assets/objects/puzzle-1-piece.png",cat:"Loisir",rarity:"rare",min:150,max:650}
   ,{name:"Le Saint-Suaire du Christ",icon:"📜",image:"assets/objects/saint-suaire.png",cat:"Vêtements",rarity:"unique",uniqueKey:"saint-suaire-du-christ",fixedPrice:0,min:0,max:0}
 ];
+const ITEMS = OBJECT_CATALOG;
 const UNLIMITED_MONEY=false;
 const SHOWCASE_LIMIT=8;
 const RARITY_ORDER={"sans-rarete":0,courant:1,"peu-commun":2,rare:3,exceptionnel:4,legendaire:5,unique:6};
