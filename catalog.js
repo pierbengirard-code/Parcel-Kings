@@ -103,7 +103,7 @@ const CATALOG_META = {
   "smartphone-pbl.png": {name:"Smartphone PB&L",cat:"Maison",rarity:"rare"},
   "mug-lapin-noir-blanc.png": {name:"Mug au lapin bélier noir et blanc",cat:"Maison",rarity:"courant"},
   "mug-lapin-noir.png": {name:"Mug au lapin bélier noir",cat:"Maison",rarity:"courant"},
-  "dent-dinosaure.png": {name:"Dent de dinosaure",cat:"Collection",rarity:"legendaire",collection:"dinosaure"},
+  "dent-dinosaure.png": {name:"Dent de dinosaure",cat:"Collection",rarity:"legendaire"},
   "figurine-el-tigro-blanco.png": {name:"Figurine El Tigro Blanco",cat:"Collection",rarity:"unique",uniqueKey:"el-tigro-blanco"},
   "coiffe-plumes-aigle.png": {name:"Coiffe aux plumes d’aigle",cat:"Collection",rarity:"legendaire"},
   "stylo-4-couleurs-or.png": {name:"Stylo quatre couleurs en or",cat:"Scolaire",rarity:"legendaire"}
