@@ -160,7 +160,7 @@ const RARITIES=[
 ];
 const COLLECTIONS=[
   {key:"dinosaure",name:"Dinosaure",description:"Rassemble les vestiges et objets consacrés aux géants disparus.",badgeKey:"chasseur-dinosaures",badgeName:"Chasseur de dinosaures",badgeImage:"assets/badges/chasseur-dinosaures.png",badgeIcon:'<img src="assets/badges/chasseur-dinosaures.png" alt="Crâne de T-Rex doré">',ready:true,plannedSlots:10},
-  {key:"rentree-2026",name:"Rentrée 2026",description:"Prépare la rentrée avec une sélection d’objets scolaires et pratiques.",badgeKey:"rentree-2026",badgeName:"Badge à venir",badgeIcon:"◇",ready:false,plannedSlots:10}
+  {key:"rentree-2026",name:"Rentrée 2026",description:"Prépare la rentrée avec une sélection d’objets scolaires et pratiques.",badgeKey:"rentree-2026",badgeName:"Rentrée 2026",badgeImage:"assets/badges/rentree-2026.png",badgeIcon:'<img src="assets/badges/rentree-2026.png" alt="Badge Rentrée 2026">',ready:true,plannedSlots:10}
 ];
 const REPUTATION_LEVELS=[
   {min:0,title:"Nouveau chineur",refresh:50,gift:150,perk:"Accès au dépôt public"},
