@@ -1,5 +1,5 @@
-const CACHE_VERSION="parcel-kings-20260829-1930";
-const CORE=["./","./index.html","./jeu.html","./landing.css?v=2","./landing-performance.css?v=1","./styles.css?v=64","./catalog.js?v=3","./game.js?v=86","./assets/backgrounds/depot-conteneur.png","./assets/boxes/colis-perdu.png","./assets/icons/parcel-kings.svg"];
+const CACHE_VERSION="parcel-kings-20260829-2200";
+const CORE=["./","./index.html","./jeu.html","./landing.css?v=2","./landing-performance.css?v=1","./styles.css?v=64","./catalog.js?v=4","./game.js?v=87","./assets/backgrounds/depot-conteneur.png","./assets/boxes/colis-perdu.png","./assets/icons/parcel-kings.svg"];
 
 self.addEventListener("install",event=>{
   event.waitUntil(caches.open(CACHE_VERSION).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting()));

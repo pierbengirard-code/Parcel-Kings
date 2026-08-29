@@ -55,6 +55,18 @@ lot-couteaux-azteques.png
 lot-fourchettes.png
 lunettes-aviateur.png
 mallette-affaires.png
+maillot-barcelone.png
+maillot-lens.png
+maillot-lille.png
+maillot-londres.png
+maillot-madrid-est.png
+maillot-madrid-nord.png
+maillot-manchester-est.png
+maillot-manchester-ouest.png
+maillot-milan.png
+maillot-munich.png
+maillot-paris.png
+maillot-rome.png
 mariniere.png
 meuble-kit.png
 montre-connectee-pbl.png
@@ -105,6 +117,18 @@ const CATALOG_META = {
   "lot-crayons-couleurs.png": {name:"Lot de 32 crayons de couleurs",cat:"Scolaire",rarity:"peu-commun",collection:"rentree-2026"},
   "calculatrice-pbl1988.png": {name:"Calculatrice scientifique",cat:"Scolaire",rarity:"peu-commun",collection:"rentree-2026"},
   "rapporteur-metal.png": {name:"Rapporteur",cat:"Scolaire",rarity:"rare",collection:"rentree-2026"},
+  "maillot-barcelone.png": {name:"Maillot de Barcelone",cat:"Sport",rarity:"rare",collection:"maillots-villes"},
+  "maillot-munich.png": {name:"Maillot de Munich",cat:"Sport",rarity:"peu-commun",collection:"maillots-villes"},
+  "maillot-paris.png": {name:"Maillot de Paris",cat:"Sport",rarity:"exceptionnel",collection:"maillots-villes"},
+  "maillot-manchester-ouest.png": {name:"Maillot de Manchester Ouest",cat:"Sport",rarity:"peu-commun",collection:"maillots-villes"},
+  "maillot-manchester-est.png": {name:"Maillot de Manchester Est",cat:"Sport",rarity:"peu-commun",collection:"maillots-villes"},
+  "maillot-madrid-nord.png": {name:"Maillot de Madrid Nord",cat:"Sport",rarity:"rare",collection:"maillots-villes"},
+  "maillot-lille.png": {name:"Maillot de Lille",cat:"Sport",rarity:"exceptionnel",collection:"maillots-villes"},
+  "maillot-lens.png": {name:"Maillot de Lens",cat:"Sport",rarity:"exceptionnel",collection:"maillots-villes"},
+  "maillot-londres.png": {name:"Maillot de Londres",cat:"Sport",rarity:"courant",collection:"maillots-villes"},
+  "maillot-rome.png": {name:"Maillot de Rome",cat:"Sport",rarity:"courant",collection:"maillots-villes"},
+  "maillot-madrid-est.png": {name:"Maillot de Madrid Est",cat:"Sport",rarity:"courant",collection:"maillots-villes"},
+  "maillot-milan.png": {name:"Maillot de Milan",cat:"Sport",rarity:"courant",collection:"maillots-villes"},
   "seche-cheveux.png": {name:"Sèche-cheveux PB&L",cat:"Maison",rarity:"sans-rarete"},
   "cadenas.png": {name:"Cadenas en laiton",cat:"Maison",rarity:"sans-rarete"},
   "pompe-velo.png": {name:"Pompe à vélo portable",cat:"Loisir",rarity:"sans-rarete"},

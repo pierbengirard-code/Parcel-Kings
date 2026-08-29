@@ -160,7 +160,8 @@ const RARITIES=[
 ];
 const COLLECTIONS=[
   {key:"dinosaure",name:"Dinosaure",description:"Rassemble les vestiges et objets consacrés aux géants disparus.",badgeKey:"chasseur-dinosaures",badgeName:"Chasseur de dinosaures",badgeImage:"assets/badges/chasseur-dinosaures.png",badgeIcon:'<img src="assets/badges/chasseur-dinosaures.png" alt="Crâne de T-Rex doré">',ready:true,plannedSlots:10},
-  {key:"rentree-2026",name:"Rentrée 2026",description:"Prépare la rentrée avec une sélection d’objets scolaires et pratiques.",badgeKey:"rentree-2026",badgeName:"Rentrée 2026",badgeImage:"assets/badges/rentree-2026.png",badgeIcon:'<img src="assets/badges/rentree-2026.png" alt="Badge Rentrée 2026">',ready:true,plannedSlots:10}
+  {key:"rentree-2026",name:"Rentrée 2026",description:"Prépare la rentrée avec une sélection d’objets scolaires et pratiques.",badgeKey:"rentree-2026",badgeName:"Rentrée 2026",badgeImage:"assets/badges/rentree-2026.png",badgeIcon:'<img src="assets/badges/rentree-2026.png" alt="Badge Rentrée 2026">',ready:true,plannedSlots:10},
+  {key:"maillots-villes",name:"Maillots des villes",description:"Réunis douze maillots inspirés de grandes villes européennes, sans emblème de club.",badgeKey:"tour-europe",badgeName:"Tour d’Europe",badgeImage:"assets/badges/tour-europe.png",badgeIcon:'<img src="assets/badges/tour-europe.png" alt="Badge Tour d’Europe">',ready:true,plannedSlots:12}
 ];
 const REPUTATION_LEVELS=[
   {min:0,title:"Nouveau chineur",refresh:50,gift:150,perk:"Accès au dépôt public"},
