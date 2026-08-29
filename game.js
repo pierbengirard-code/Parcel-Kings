@@ -14,7 +14,7 @@ const LEGACY_ITEMS = [
   {name:"Lampe de brocante",icon:"🏮",image:"assets/objects/lampe-brocante.png",model:"assets/models/lampe-brocante.glb",cat:"Curiosités",rarity:"sans-rarete",min:15,max:48},
   {name:"Boussole ancienne",icon:"🧭",image:"assets/objects/boussole-ancienne.png",model:"assets/models/boussole-ancienne.glb",cat:"Curiosités",rarity:"courant",min:55,max:125},
   {name:"Masque cérémoniel",icon:"🎭",image:"assets/objects/masque-ceremoniel.png",model:"assets/models/masque-ceremoniel.glb",cat:"Curiosités",rarity:"rare",min:280,max:690},
-  {name:"Vase ébréché",icon:"🏺",image:"assets/objects/vase-ebreche.png",model:"assets/models/vase-ebreche.glb",nativeModel:"assets/models/vase-ebreche-hd.glb",true3D:true,cat:"Curiosités",rarity:"sans-rarete",min:12,max:44},
+  {name:"Vase ébréché",icon:"🏺",image:"assets/objects/vase-ebreche.png",cat:"Curiosités",rarity:"sans-rarete",min:12,max:44},
   {name:"Carte sportive",icon:"🃏",image:"assets/objects/carte-sportive.png",model:"assets/models/carte-sportive.glb",cat:"Collections",rarity:"rare",min:90,max:260},
   {name:"Figurine scellée",icon:"🦸",image:"assets/objects/figurine-scellee.png",model:"assets/models/figurine-scellee.glb",cat:"Collections",rarity:"exceptionnel",min:250,max:580},
   {name:"Prototype console n°001",icon:"👾",image:"assets/objects/prototype-console-unique.png",model:"assets/models/prototype-console-unique.glb",cat:"Rétro gaming",rarity:"unique",uniqueKey:"console-001",min:2400,max:4200},
@@ -35,7 +35,7 @@ const LEGACY_ITEMS = [
   ,{name:"Wilson",icon:"🏐",image:"assets/objects/wilson-volley.png",cat:"Loisir",rarity:"unique",uniqueKey:"wilson-volley",min:3000,max:10000}
   ,{name:"Brosse à dents électrique",icon:"🪥",image:"assets/objects/brosse-dents-electrique.png",cat:"Maison",rarity:"sans-rarete",min:12,max:45}
   ,{name:"Sirop d'érable",icon:"🍁",image:"assets/objects/sirop-erable.png",cat:"Maison",rarity:"sans-rarete",min:8,max:28}
-  ,{name:"Mug",icon:"☕",image:"assets/objects/mug-lapin-belier.png",nativeModel:"assets/models/mug-lapin-hd.glb",true3D:true,cat:"Maison",rarity:"sans-rarete",multiplierMin:.4,multiplierMax:.7,min:10,max:35}
+  ,{name:"Mug",icon:"☕",image:"assets/objects/mug-lapin-belier.png",cat:"Maison",rarity:"sans-rarete",multiplierMin:.4,multiplierMax:.7,min:10,max:35}
   ,{name:"Clé USB 1 To",icon:"💾",image:"assets/objects/cle-usb-1to.png",cat:"Informatique",rarity:"courant",min:45,max:140}
   ,{name:"Barrette de RAM",icon:"🧠",image:"assets/objects/barrette-ram.png",cat:"Informatique",rarity:"exceptionnel",min:240,max:780}
   ,{name:"Portefeuille en cuir",icon:"👛",image:"assets/objects/portefeuille-cuir.png",cat:"Maison",rarity:"peu-commun",min:65,max:190}
@@ -57,7 +57,7 @@ const LEGACY_ITEMS = [
   ,{name:"Écran PC 1 000 Hz",icon:"🖥️",image:"assets/objects/ecran-pc-1000hz.png",cat:"Informatique",rarity:"courant",min:80,max:350}
   ,{name:"Ventilateur PC",icon:"🌀",image:"assets/objects/ventilateur-pc.png",cat:"Informatique",rarity:"courant",min:12,max:65}
   ,{name:"Nokia 3310 bleu",icon:"📱",image:"assets/objects/nokia-3310.png",cat:"Informatique",rarity:"rare",min:120,max:480}
-  ,{name:"Stylo plume marron",icon:"✒️",image:"assets/objects/stylo-plume.png",cat:"Scolaire",rarity:"sans-rarete",min:4,max:28}
+  ,{name:"Stylo plume",icon:"✒️",image:"assets/objects/stylo-plume.png",cat:"Scolaire",rarity:"courant",collection:"rentree-2026",min:4,max:28}
   ,{name:"Souris d'ordinateur gaming",icon:"🖱️",image:"assets/objects/souris-gaming.png",cat:"Informatique",rarity:"courant",min:20,max:95}
   ,{name:"Clavier d'ordinateur gaming",icon:"⌨️",image:"assets/objects/clavier-gaming.png",cat:"Informatique",rarity:"courant",min:35,max:150}
   ,{name:"Casque et micro gaming",icon:"🎧",image:"assets/objects/casque-micro-gaming.png",cat:"Informatique",rarity:"courant",min:30,max:140}
@@ -82,7 +82,7 @@ const LEGACY_ITEMS = [
   ,{name:"Figurine du chevalier noir",icon:"🗡️",image:"assets/objects/figurine-chevalier-noir.png",cat:"Loisir",rarity:"rare",min:160,max:680}
   ,{name:"Pépite d'or de 72 kg",icon:"🪙",image:"assets/objects/pepite-or-72kg.png",cat:"Loisir",rarity:"unique",uniqueKey:"pepite-or-72kg",min:8000,max:25000}
   ,{name:"Chaussettes France 2018",icon:"🧦",image:"assets/objects/chaussettes-france-2018.png",cat:"Vêtements",rarity:"peu-commun",min:55,max:180}
-  ,{name:"Cartable Louison",icon:"🎒",image:"assets/objects/cartable-louison.png",cat:"Vêtements",rarity:"courant",min:25,max:95}
+  ,{name:"Un cartable d’école",icon:"🎒",image:"assets/objects/cartable-louison.png",cat:"Vêtements",rarity:"exceptionnel",collection:"rentree-2026",min:25,max:95}
   ,{name:"Roue de secours",icon:"🛞",image:"assets/objects/roue-secours.png",cat:"Maison",rarity:"sans-rarete",min:12,max:55}
   ,{name:"Chemise Safari",icon:"👕",image:"assets/objects/chemise-safari.png",cat:"Vêtements",rarity:"courant",min:30,max:110}
   ,{name:"Spray anti-moustique",icon:"🦟",image:"assets/objects/spray-anti-moustique.png",cat:"Loisir",rarity:"sans-rarete",min:3,max:18}
@@ -159,7 +159,8 @@ const RARITIES=[
   {key:"unique",label:"Unique",chance:.01,min:30,max:50,color:"#ff8a1f"}
 ];
 const COLLECTIONS=[
-  {key:"dinosaure",name:"Dinosaure",description:"Rassemble les vestiges et objets consacrés aux géants disparus.",badgeKey:"chasseur-dinosaures",badgeName:"Chasseur de dinosaures",badgeImage:"assets/badges/chasseur-dinosaures.png",badgeIcon:'<img src="assets/badges/chasseur-dinosaures.png" alt="Crâne de T-Rex doré">',ready:true,plannedSlots:10}
+  {key:"dinosaure",name:"Dinosaure",description:"Rassemble les vestiges et objets consacrés aux géants disparus.",badgeKey:"chasseur-dinosaures",badgeName:"Chasseur de dinosaures",badgeImage:"assets/badges/chasseur-dinosaures.png",badgeIcon:'<img src="assets/badges/chasseur-dinosaures.png" alt="Crâne de T-Rex doré">',ready:true,plannedSlots:10},
+  {key:"rentree-2026",name:"Rentrée 2026",description:"Prépare la rentrée avec une sélection d’objets scolaires et pratiques.",badgeKey:"rentree-2026",badgeName:"Badge à venir",badgeIcon:"◇",ready:false,plannedSlots:10}
 ];
 const REPUTATION_LEVELS=[
   {min:0,title:"Nouveau chineur",refresh:50,gift:150,perk:"Accès au dépôt public"},
@@ -217,7 +218,7 @@ function objectVisual(i,context="card"){
   const source=i.nativeModel||definition?.nativeModel;
   const legacy=i.model||definition?.model;
   const native=source||(legacy?`assets/models/native/${legacy.split('/').pop()}`:null);
-  const approvedTrue3D=Boolean(i.true3D||definition?.true3D);
+  const approvedTrue3D=Boolean(definition?.true3D);
   const displayImage=context==="reveal"?i.image:thumbFor(i.image);
   const nativeViewer=()=>{const spin=context==="reveal"?"":"auto-rotate auto-rotate-delay=\"0\" rotation-per-second=\"11deg\"",poster=context==="reveal"?"":`poster="${displayImage}"`,loading=context==="reveal"?"eager":"lazy";return `<model-viewer class="true-3d-model native-3d-${context}" src="${native}?v=pbr3" ${poster} alt="Modèle 3D complet de ${i.name}" camera-controls loading="${loading}" reveal="auto" ${spin} touch-action="none" interaction-prompt="none" shadow-intensity="1.8" shadow-softness=".88" exposure="1.2" tone-mapping="commerce" environment-image="neutral" camera-orbit="25deg 74deg auto" field-of-view="30deg"></model-viewer>`};
   // Les modèles WebGL sont réservés à l'inspection en grand. Les cartes et la

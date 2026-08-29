@@ -7,6 +7,7 @@ baskets-blanches-pbl.png
 beret-francais.png
 biberon.png
 boite-gouter.png
+calculatrice-pbl1988.png
 bombe-peinture-jaune.png
 bonnet-gris-pbl.png
 boucles-oreilles-lamas.png
@@ -48,6 +49,8 @@ kimono-karate.png
 kit-plongee.png
 lampe-torche.png
 lot-casseroles.png
+lot-cahiers.png
+lot-crayons-couleurs.png
 lot-couteaux-azteques.png
 lot-fourchettes.png
 lunettes-aviateur.png
@@ -80,6 +83,8 @@ smartphone-pbl.png
 statuette-oreille-cassee.png
 statuette-tribale.png
 stylo-4-couleurs-or.png
+trousse-2026.png
+livre-francais-bourrasque.png
 sweat-capuche-qualite.png
 sweat-capuche-simple.png
 timbre-tour-eiffel.png
@@ -92,7 +97,14 @@ voiture-teleguidee.png
 `.trim().split(/\s+/);
 
 const CATALOG_META = {
-  "crayons.png": {name:"Lot de 12 crayons de couleurs",cat:"Scolaire",rarity:"peu-commun",collection:"rentree-2026"},
+  "crayons.png": {name:"Lot de 12 crayons de couleurs",cat:"Scolaire",rarity:"peu-commun"},
+  "boite-gouter.png": {name:"Boîte à goûter",cat:"Scolaire",rarity:"courant",collection:"rentree-2026"},
+  "lot-cahiers.png": {name:"Lot de cahiers",cat:"Scolaire",rarity:"courant",collection:"rentree-2026"},
+  "trousse-2026.png": {name:"Trousse",cat:"Scolaire",rarity:"courant",collection:"rentree-2026"},
+  "livre-francais-bourrasque.png": {name:"Livre de Français",cat:"Scolaire",rarity:"peu-commun",collection:"rentree-2026"},
+  "lot-crayons-couleurs.png": {name:"Lot de 32 crayons de couleurs",cat:"Scolaire",rarity:"peu-commun",collection:"rentree-2026"},
+  "calculatrice-pbl1988.png": {name:"Calculatrice scientifique",cat:"Scolaire",rarity:"peu-commun",collection:"rentree-2026"},
+  "rapporteur-metal.png": {name:"Rapporteur",cat:"Scolaire",rarity:"rare",collection:"rentree-2026"},
   "seche-cheveux.png": {name:"Sèche-cheveux PB&L",cat:"Maison",rarity:"sans-rarete"},
   "cadenas.png": {name:"Cadenas en laiton",cat:"Maison",rarity:"sans-rarete"},
   "pompe-velo.png": {name:"Pompe à vélo portable",cat:"Loisir",rarity:"sans-rarete"},
@@ -106,7 +118,7 @@ const CATALOG_META = {
   "dent-dinosaure.png": {name:"Dent de dinosaure",cat:"Collection",rarity:"legendaire"},
   "figurine-el-tigro-blanco.png": {name:"Figurine El Tigro Blanco",cat:"Collection",rarity:"unique",uniqueKey:"el-tigro-blanco"},
   "coiffe-plumes-aigle.png": {name:"Coiffe aux plumes d’aigle",cat:"Collection",rarity:"legendaire"},
-  "stylo-4-couleurs-or.png": {name:"Stylo quatre couleurs en or",cat:"Scolaire",rarity:"legendaire"}
+  "stylo-4-couleurs-or.png": {name:"Stylo 4 couleurs",cat:"Scolaire",rarity:"rare",collection:"rentree-2026"}
 };
 
 const RARITY_GROUPS = {
