@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=57">
+  <link rel="stylesheet" href="styles.css?v=58">
   <script type="module" src="vendor/model-viewer.min.js"></script>
 </head>
 <body>
@@ -26,6 +26,7 @@
         <div class="progress"><i id="xpBar"></i></div>
       </div>
       <button class="credit-button" id="addCreditsBtn">+ 1 000 $</button>
+      <button class="topbar-daily" id="dailyBtn">Cadeau du jour <i id="giftDot"></i></button>
     </div>
     <button class="icon-button" id="soundBtn" title="Activer ou couper le son">♪</button>
   </header>
@@ -33,7 +34,6 @@
   <main>
     <section class="hero showcase-only">
       <div class="hero-art garage-viewport" id="garageViewport">
-        <div class="showroom-bar"><span>NOUVEL ARRIVAGE DANS <b id="timer">04:00</b></span><div><button class="secondary" id="dailyBtn">Cadeau du jour <i id="giftDot"></i></button><button class="primary" id="scrollToLots">Voir les colis ↓</button></div></div>
         <div class="premium-showcase-header" aria-live="polite">
           <h2>MA VITRINE</h2>
           <div><span class="collection-count-icon">◇</span><strong id="showcaseSceneCount">0</strong><small>OBJETS</small><i></i><span class="collection-value-icon">◆</span><small>VALEUR TOTALE</small><strong id="showcaseSceneValue">0 $</strong></div>
@@ -60,7 +60,7 @@
 
     <section class="panel active" id="market">
       <div class="section-heading">
-        <div><p class="eyebrow">ARRIVAGE DU JOUR</p><h2>Choisis ton prochain coup</h2></div>
+        <div><p class="eyebrow">ARRIVAGE DU JOUR</p><div class="depot-title-line"><h2>Choisis ton prochain coup</h2><span class="arrival-timer">NOUVEL ARRIVAGE DANS <b id="timer">04:00</b></span></div></div>
         <button class="text-button" id="refreshBtn">↻ Renouveler <small>50 $</small></button>
       </div>
       <div class="moon-counter" aria-label="Progression des cartons pour faire le tour de la Terre">
@@ -140,6 +140,6 @@
   </div>
 
   <div class="toast" id="toast"></div>
-  <script src="game.js?v=75"></script>
+  <script src="game.js?v=76"></script>
 </body>
 </html>
