@@ -1,6 +1,6 @@
 {
-  "name": "Parcel Kings",
-  "short_name": "Parcel Kings",
+  "name": "Box or Bust",
+  "short_name": "Box or Bust",
   "description": "Achetez des colis perdus et collectionnez leurs trésors.",
   "lang": "fr",
   "start_url": "./index.html",
@@ -10,7 +10,7 @@
   "theme_color": "#171329",
   "icons": [
     {
-      "src": "assets/icons/parcel-kings.svg",
+      "src": "assets/icons/box-or-bust.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"

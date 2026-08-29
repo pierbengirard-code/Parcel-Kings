@@ -11,7 +11,7 @@ function Stop-Publication([string]$message) {
 
 Clear-Host
 Write-Host '============================================' -ForegroundColor DarkRed
-Write-Host '       PARCEL KINGS - PUBLICATION' -ForegroundColor Yellow
+Write-Host '        BOX OR BUST - PUBLICATION' -ForegroundColor Yellow
 Write-Host '============================================' -ForegroundColor DarkRed
 Write-Host ''
 

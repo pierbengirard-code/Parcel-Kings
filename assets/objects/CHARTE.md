@@ -1,4 +1,4 @@
-# Charte des objets Parcel Kings
+# Charte des objets Box or Bust
 
 Tous les objets utilisent un cadrage carré, un fond réellement transparent et
 une vue de trois quarts avant. L'objet doit être entier, centré et entouré d'une
@@ -8,7 +8,7 @@ marge régulière.
 
 ```text
 Use case: stylized-concept
-Asset type: premium collectible object for Parcel Kings web game, transparent PNG cutout
+Asset type: premium collectible object for Box or Bust web game, transparent PNG cutout
 Primary request: [DESCRIPTION PRÉCISE DE L'OBJET]
 Scene/backdrop: genuinely transparent background, isolated object only
 Style/medium: high-end stylized 3D product render, coherent premium video game inventory asset

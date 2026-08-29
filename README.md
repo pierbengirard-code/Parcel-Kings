@@ -1,4 +1,4 @@
-# Parcel Kings
+# Box or Bust
 
 Jeu web statique d'achat à l'aveugle de colis perdus, de revente et de collection.
 
@@ -17,7 +17,7 @@ Double-cliquez sur `PREPARER_PUBLICATION.bat`. Cette vérification :
 - recherche les fichiers référencés mais absents ;
 - bloque la publication lorsqu'une erreur est détectée.
 
-Après le message « Parcel Kings est prêt à être publié », utilisez
+Après le message « Box or Bust est prêt à être publié », utilisez
 `PUBLIER_LE_JEU.bat` ou GitHub Desktop pour envoyer les changements.
 
 ## Architecture utile

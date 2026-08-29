@@ -15,5 +15,5 @@ if ($pythonCommand) {
 
 if ($LASTEXITCODE -ne 0) { throw "La validation a échoué. Corrigez les erreurs avant de publier." }
 Write-Host ""
-Write-Host "Parcel Kings est prêt à être publié." -ForegroundColor Green
+Write-Host "Box or Bust est prêt à être publié." -ForegroundColor Green
 Read-Host "Appuyez sur Entrée pour fermer"
