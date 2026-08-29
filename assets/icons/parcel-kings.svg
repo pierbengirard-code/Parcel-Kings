@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Parcel Kings">
+  <rect width="512" height="512" rx="92" fill="#171329"/>
+  <path d="M92 130 256 54l164 76-164 82L92 130Z" fill="#d7ff43"/>
+  <path d="M92 130v220l164 108V212L92 130Z" fill="#9fbd2f"/>
+  <path d="M420 130v220L256 458V212l164-82Z" fill="#6f8522"/>
+  <path d="m218 82 164 78v63l-42 21v-60l-164-79 42-23Z" fill="#f7f5ef" opacity=".9"/>
+  <path d="M174 288h164v42H174z" fill="#171329" opacity=".75"/>
+</svg>

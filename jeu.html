@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#100d22">
+  <meta name="description" content="Ouvrez des colis perdus, découvrez des objets rares et exposez vos plus belles trouvailles dans Parcel Kings.">
   <title>Parcel Kings — Chasse aux trésors</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=63">
-  <script type="module" src="vendor/model-viewer.min.js"></script>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icons/parcel-kings.svg" type="image/svg+xml">
 </head>
 <body>
   <div class="noise"></div>
@@ -120,7 +122,7 @@
     </section>
   </main>
 
-  <footer class="site-version" aria-label="Version du site">Version 20260829-1752</footer>
+  <footer class="site-version" aria-label="Version du site">Version 20260829-1815</footer>
 
   <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
     <div class="modal" id="openingModal" role="dialog" aria-modal="true" aria-label="Ouverture du colis">
@@ -141,6 +143,7 @@
 
   <div class="toast" id="toast"></div>
   <script src="catalog.js?v=2"></script>
-  <script src="game.js?v=82"></script>
+  <script src="game.js?v=83"></script>
+  <script>if("serviceWorker" in navigator&&!/^(localhost|127\.0\.0\.1)$/.test(location.hostname))window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));</script>
 </body>
 </html>

@@ -1,0 +1,19 @@
+{
+  "name": "Parcel Kings",
+  "short_name": "Parcel Kings",
+  "description": "Achetez des colis perdus et collectionnez leurs trésors.",
+  "lang": "fr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#071018",
+  "theme_color": "#171329",
+  "icons": [
+    {
+      "src": "assets/icons/parcel-kings.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

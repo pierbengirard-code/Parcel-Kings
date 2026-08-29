@@ -1,0 +1,4 @@
+/* Ajustements de production : même esthétique, moins de couches GPU. */
+.landing-noise{display:none}
+.landing-header,.rules-button,.mystery-card{backdrop-filter:none;-webkit-backdrop-filter:none}
+@media(max-width:700px){.landing-bg{position:absolute}.hero-kicker i{box-shadow:none}}
