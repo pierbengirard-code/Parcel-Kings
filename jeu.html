@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=56">
+  <link rel="stylesheet" href="styles.css?v=57">
   <script type="module" src="vendor/model-viewer.min.js"></script>
 </head>
 <body>
@@ -31,7 +31,7 @@
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero showcase-only">
       <div class="hero-art garage-viewport" id="garageViewport">
         <div class="showroom-bar"><span>NOUVEL ARRIVAGE DANS <b id="timer">04:00</b></span><div><button class="secondary" id="dailyBtn">Cadeau du jour <i id="giftDot"></i></button><button class="primary" id="scrollToLots">Voir les colis ↓</button></div></div>
         <div class="premium-showcase-header" aria-live="polite">
@@ -120,6 +120,8 @@
     </section>
   </main>
 
+  <footer class="site-version" aria-label="Version du site">Version 20260829-0734</footer>
+
   <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
     <div class="modal" id="openingModal" role="dialog" aria-modal="true" aria-label="Ouverture du colis">
       <button class="modal-close" id="closeModal">×</button>
@@ -138,6 +140,6 @@
   </div>
 
   <div class="toast" id="toast"></div>
-  <script src="game.js?v=74"></script>
+  <script src="game.js?v=75"></script>
 </body>
 </html>
