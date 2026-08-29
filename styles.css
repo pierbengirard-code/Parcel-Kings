@@ -568,6 +568,19 @@ body{background-attachment:scroll!important}
 @keyframes suspenseParcelOptimized{0%{opacity:1}45%{opacity:.82}100%{opacity:.18}}
 @media(max-width:850px){.parcel-card-render{animation:none;transform:rotateY(-5deg)}}
 
+/* Mode fluidité : effets conservés sous forme de dégradés, sans retraitement
+   permanent des pixels par le GPU. */
+.hd-object-image,.object-image,.scene-object-image,.item-icon .object-image,.hero .scene-showcase .scene-display .hd-object-image,.hero .scene-showcase .scene-display .scene-object-image,.object-inspector .inspector-object,.object-inspector .hd-object-image,.object-inspector .reveal-object-image{filter:none!important}
+.object-inspector .inspector-glow{width:270px;height:150px;bottom:8px;filter:none!important;opacity:.48;background:radial-gradient(ellipse,color-mix(in srgb,var(--rarity) 36%,transparent),transparent 68%)}
+.object-inspector:before{box-shadow:none!important}
+.parcel-opening img{filter:none!important;transform:none!important;transition:opacity .32s ease!important}
+.parcel-opening.open img{transform:none!important;opacity:.12}
+.parcel-card-render{will-change:auto}
+.panel.active{animation:panelFadeFast .18s ease-out}
+@keyframes panelFadeFast{from{opacity:.7}to{opacity:1}}
+.rarity-unique:before,.rarity-unique:after,.rarity-legendaire:before,.rarity-legendaire:after{animation-duration:2.4s!important}
+@media(max-width:850px){.rarity-unique:before,.rarity-unique:after,.rarity-legendaire:before,.rarity-legendaire:after{animation:none!important}.object-inspector .inspector-glow{opacity:.34}}
+
 /* Actions permanentes et compte à rebours replacés dans leur contexte. */
 .topbar-daily{position:relative;padding:10px 13px;border:1px solid rgba(168,85,247,.45);border-radius:5px;background:linear-gradient(180deg,#2c2141,#191328);color:#eee8f7;font:800 10px "DM Sans";letter-spacing:.5px;text-transform:uppercase;cursor:pointer;transition:.2s}.topbar-daily:hover{border-color:var(--lime);box-shadow:0 0 16px rgba(215,255,67,.1);transform:translateY(-1px)}.topbar-daily #giftDot{vertical-align:middle}
 .depot-title-line{display:flex;align-items:center;gap:17px;flex-wrap:wrap}.arrival-timer{display:inline-flex;align-items:center;gap:7px;padding:7px 10px;border:1px solid rgba(168,85,247,.36);border-radius:5px;background:rgba(35,27,54,.68);color:#a9a0b7;font-size:8px;font-weight:900;letter-spacing:1.2px;white-space:nowrap}.arrival-timer b{color:var(--lime);font-size:11px;letter-spacing:.5px}

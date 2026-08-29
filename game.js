@@ -214,7 +214,9 @@ function objectVisual(i,context="card"){
   const approvedTrue3D=Boolean(i.true3D||definition?.true3D);
   const displayImage=context==="reveal"?i.image:thumbFor(i.image);
   const nativeViewer=()=>{const spin=context==="reveal"?"":"auto-rotate auto-rotate-delay=\"0\" rotation-per-second=\"11deg\"",poster=context==="reveal"?"":`poster="${displayImage}"`,loading=context==="reveal"?"eager":"lazy";return `<model-viewer class="true-3d-model native-3d-${context}" src="${native}?v=pbr3" ${poster} alt="Modèle 3D complet de ${i.name}" camera-controls loading="${loading}" reveal="auto" ${spin} touch-action="none" interaction-prompt="none" shadow-intensity="1.8" shadow-softness=".88" exposure="1.2" tone-mapping="commerce" environment-image="neutral" camera-orbit="25deg 74deg auto" field-of-view="30deg"></model-viewer>`};
-  if(approvedTrue3D&&native)return nativeViewer();
+  // Les modèles WebGL sont réservés à l'inspection en grand. Les cartes et la
+  // vitrine utilisent les vignettes HD afin de ne pas créer plusieurs scènes GPU.
+  if(approvedTrue3D&&native&&context==="reveal")return nativeViewer();
   if(context==="scene"&&displayImage)return `<img class="object-image hd-object-image scene-object-image" src="${displayImage}?v=thumb1" alt="${i.name}" loading="lazy" decoding="async" draggable="false">`;
   if(USE_HD_OBJECT_IMAGES&&displayImage)return `<img class="object-image hd-object-image ${context}-object-image" src="${displayImage}?v=${context==="reveal"?"photo6":"thumb1"}" alt="${i.name}" loading="${context==="reveal"?"eager":"lazy"}" decoding="async" ${context==="reveal"?'fetchpriority="high"':""} draggable="false">`;
   if(native)return nativeViewer();
