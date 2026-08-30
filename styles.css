@@ -590,6 +590,9 @@ body{background-attachment:scroll!important}
 .reveal-item .object-inspector:has(img[src*="serpent-venimeux"]) .inspector-object{top:0;padding-top:18px;padding-bottom:18px}
 .reveal-item .object-inspector:has(img[src*="serpent-venimeux"]):after{transform:none}
 
+/* Le bandeau porte l'infobulle au-dessus des onglets (10), sous les modales (30). */
+.topbar{z-index:20;overflow:visible}
+
 /* Menu natif sombre : le panneau Windows doit rester lisible lui aussi. */
 #inventoryFilter{color-scheme:dark;background:#241d36;color:#f3eefb;border:1px solid #655479;border-radius:8px;min-width:145px;padding:10px 14px;cursor:pointer}
 #inventoryFilter option{background:#241d36;color:#f3eefb;font-size:13px}
