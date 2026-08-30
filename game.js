@@ -1,5 +1,5 @@
 const LEGACY_ITEMS = [
-  {name:"Game Boy Color",icon:"🎮",image:"assets/objects/game-boy-color.png",model:"assets/models/game-boy-color.glb",cat:"Rétro gaming",rarity:"peu-commun",min:120,max:240},
+  {name:"Console portable",icon:"🎮",image:"assets/objects/game-boy-color.png",cat:"Rétro gaming",rarity:"peu-commun",min:120,max:240},
   {name:"Cassette collector",icon:"📼",image:"assets/objects/cassette-collector.png",model:"assets/models/cassette-collector.glb",cat:"Rétro gaming",rarity:"sans-rarete",min:18,max:55},
   {name:"Manette vintage",icon:"🕹️",image:"assets/objects/manette-vintage.png",model:"assets/models/manette-vintage.glb",cat:"Rétro gaming",rarity:"courant",min:45,max:95},
   {name:"Montre mécanique",icon:"⌚",image:"assets/objects/montre-mecanique.png",model:"assets/models/montre-mecanique.glb",cat:"Horlogerie",rarity:"peu-commun",min:160,max:380},
@@ -104,7 +104,7 @@ const LEGACY_ITEMS = [
   ,{name:"Six bâtons de dynamite",icon:"🧨",image:"assets/objects/dynamite-6.png",cat:"Loisir",rarity:"rare",min:180,max:760}
   ,{name:"Four micro-ondes",icon:"📻",image:"assets/objects/four-micro-ondes.png",cat:"Loisir",rarity:"sans-rarete",min:8,max:60}
   ,{name:"Caquelon",icon:"🫕",image:"assets/objects/caquelon.png",cat:"Maison",rarity:"courant",min:35,max:130}
-  ,{name:"Slip de bain Tina Arena",icon:"🩲",image:"assets/objects/slip-bain-tina-arena.png",cat:"Loisir",rarity:"rare",min:170,max:720}
+  ,{name:"Maillot de bain Tina Arena",icon:"🩱",image:"assets/objects/maillot-bain-tina-arena.png",cat:"Vêtements",rarity:"rare",min:170,max:720}
   ,{name:"Robe d’avocat",icon:"⚖️",image:"assets/objects/robe-avocat.png",cat:"Vêtements",rarity:"peu-commun",min:85,max:280}
   ,{name:"Tableau de Claude Monet",icon:"🖼️",image:"assets/objects/tableau-monet.png",cat:"Loisir",rarity:"unique",uniqueKey:"tableau-claude-monet",min:5000,max:22000}
   ,{name:"Kalashnikov Airsoft",icon:"🎯",image:"assets/objects/kalashnikov-airsoft.png",cat:"Loisir",rarity:"peu-commun",min:100,max:380}
@@ -127,7 +127,7 @@ const LEGACY_ITEMS = [
 ];
 // Conserve le catalogue historique (et donc les objets déjà sauvegardés), puis
 // ajoute les nouvelles créations sans introduire de doublon de nom ou d'image.
-const ITEMS = [...LEGACY_ITEMS,...OBJECT_CATALOG.filter(candidate=>!LEGACY_ITEMS.some(legacy=>legacy.name===candidate.name||legacy.image===candidate.image))];
+const ITEMS = [...LEGACY_ITEMS,...OBJECT_CATALOG,...TODAY_OBJECT_CATALOG.map(item=>({...item,icon:iconFor(item.cat)}))].filter((item,index,all)=>all.findIndex(other=>other.name===item.name||other.image===item.image)===index);
 const UNLIMITED_MONEY=false;
 const SHOWCASE_LIMIT=8;
 const RARITY_ORDER={"sans-rarete":0,courant:1,"peu-commun":2,rare:3,exceptionnel:4,legendaire:5,unique:6};
@@ -182,9 +182,25 @@ if(state.dailyDate!==today())state.dailyClaimed=false;
 function hydrateSave(saved){
   const loaded={...freshState(),...(saved||{}),saveVersion:SAVE_VERSION};
   if(saved?.lotFormatVersion!==LOT_FORMAT_VERSION){loaded.lots=[];loaded.lotFormatVersion=LOT_FORMAT_VERSION}
+  ["discoveredItems","collectionDiscoveries","foundUniques"].forEach(key=>{
+    if(Array.isArray(loaded[key]))loaded[key]=[...new Set(loaded[key].map(name=>name==="Game Boy Color"?"Console portable":name==="Slip de bain Tina Arena"?"Maillot de bain Tina Arena":name))];
+  });
+  if(loaded.lastDrawnName==="Game Boy Color")loaded.lastDrawnName="Console portable";
+  if(loaded.lastDrawnName==="Slip de bain Tina Arena")loaded.lastDrawnName="Maillot de bain Tina Arena";
   ["inventory","showcase"].forEach(zone=>{
     loaded[zone]=Array.isArray(loaded[zone])?loaded[zone]:[];
     loaded[zone]=loaded[zone].map(item=>{
+      if(item.name==="Slip de bain Tina Arena"||item.image?.endsWith("/slip-bain-tina-arena.png")){
+        item={...item,name:"Maillot de bain Tina Arena",image:"assets/objects/maillot-bain-tina-arena.png",cat:"Vêtements"};
+      }
+      if(item.name==="Game Boy Color"||item.image?.endsWith("/game-boy-color.png")){
+        item={...item,name:"Console portable"};
+        delete item.model;delete item.nativeModel;delete item.true3D;
+      }
+      // Merge the retired 12-pencil variant without losing owned items or their value.
+      if(item.name==="Lot de 12 crayons de couleurs"||item.image?.endsWith("/crayons.png")){
+        item={...item,name:"Lot de 32 crayons de couleurs",image:"assets/objects/lot-crayons-couleurs.png",collection:"rentree-2026"};
+      }
       const source=ITEMS.find(x=>(x.uniqueKey&&x.uniqueKey===item.uniqueKey)||x.name===item.name);
       return source?{...item,rarity:source.rarity,...(source.image?{image:source.image}:{}),...(source.model?{model:source.model}:{}),...(source.nativeModel?{nativeModel:source.nativeModel}:{}),...(source.true3D?{true3D:true}:{})}:item
     })

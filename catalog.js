@@ -28,7 +28,6 @@ coiffe-plumes-aigle.png
 costume-tigre.png
 coupe-champion-quartier.png
 couteau-chef-pbl.png
-crayons.png
 cutter-jaune-noir.png
 dent-dinosaure.png
 ecouteurs-sans-fil-pbl.png
@@ -109,7 +108,6 @@ voiture-teleguidee.png
 `.trim().split(/\s+/);
 
 const CATALOG_META = {
-  "crayons.png": {name:"Lot de 12 crayons de couleurs",cat:"Scolaire",rarity:"peu-commun"},
   "boite-gouter.png": {name:"Boîte à goûter",cat:"Scolaire",rarity:"courant",collection:"rentree-2026"},
   "lot-cahiers.png": {name:"Lot de cahiers",cat:"Scolaire",rarity:"courant",collection:"rentree-2026"},
   "trousse-2026.png": {name:"Trousse",cat:"Scolaire",rarity:"courant",collection:"rentree-2026"},

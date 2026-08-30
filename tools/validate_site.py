@@ -19,7 +19,7 @@ for html_name in ("index.html", "jeu.html", "404.html"):
     for ref in re.findall(r'(?:src|href)=["\']([^"\']+)', html):
         check(ref, html_name)
 
-for source_name in ("game.js", "catalog.js", "styles.css", "landing.css", "sw.js"):
+for source_name in ("game.js", "catalog.js", "catalog-20260830.js", "styles.css", "landing.css", "sw.js"):
     source = (ROOT / source_name).read_text(encoding="utf-8")
     for ref in re.findall(r'["\'](assets/[^"\']+?\.(?:png|webp|svg|glb))[?"\']', source, re.I):
         check(ref, source_name)
