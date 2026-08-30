@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=66">
+  <link rel="stylesheet" href="styles.css?v=67">
   <link rel="stylesheet" href="achievements.css?v=1">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/icons/box-or-bust.svg" type="image/svg+xml">
@@ -88,7 +88,7 @@
     </section>
 
     <section class="panel" id="inventory">
-      <div class="section-heading"><div><p class="eyebrow">TON GARAGE</p><h2>Objets en stock</h2></div><div class="section-tools"><select class="quality-filter" id="inventoryFilter" aria-label="Filtrer les objets en stock"><option value="quality-desc">Filtre · Qualité ↓</option><option value="quality-asc">Filtre · Qualité ↑</option><option value="duplicates">Filtre · Doublons</option></select><div class="stock-value">Valeur estimée <b id="stockValue">0 $</b></div></div></div>
+      <div class="section-heading"><div><p class="eyebrow">TON GARAGE</p><h2>Objets en stock</h2></div><div class="section-tools"><select class="quality-filter" id="inventoryFilter" aria-label="Filtrer les objets en stock"><option value="quality-desc">Qualité</option><option value="duplicates">Doublons</option></select><div class="stock-value">Valeur estimée <b id="stockValue">0 $</b></div></div></div>
       <div class="inventory-grid" id="inventoryGrid"></div>
       <div class="empty-state" id="emptyInventory"><span>📦</span><h3>Ton garage est vide</h3><p>Ouvre un colis pour commencer ta collection.</p><button class="primary" data-go="market">Aller au dépôt</button></div>
     </section>
@@ -129,7 +129,7 @@
     </section>
   </main>
 
-  <footer class="site-version" aria-label="Version du site">Version 20260831-0034</footer>
+  <footer class="site-version" aria-label="Version du site">Version 20260831-0037</footer>
 
   <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
     <div class="modal" id="openingModal" role="dialog" aria-modal="true" aria-label="Ouverture du colis">
@@ -153,7 +153,7 @@
   <script src="catalog-20260830.js?v=4"></script>
   <aside class="achievement-notice" id="achievementNotice" role="status" aria-live="polite" hidden><strong></strong><span></span><button class="primary" id="viewAchievements">Voir mes succès</button><button class="achievement-dismiss" id="dismissAchievements" aria-label="Fermer la notification de succès">Fermer</button></aside>
   <script src="achievements.js?v=4"></script>
-  <script src="game.js?v=96"></script>
+  <script src="game.js?v=97"></script>
   <script>if("serviceWorker" in navigator&&!/^(localhost|127\.0\.0\.1)$/.test(location.hostname))window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));</script>
 </body>
 </html>
