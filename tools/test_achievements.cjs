@@ -14,8 +14,16 @@ case 'showcaseDuplicates':s.showcase=Array.from({length:target},()=>item('couran
 case 'stockRarity':s.inventory=Array.from({length:target},()=>item(d.rarity));break;
 case 'ownedRarity':s.inventory=Array.from({length:Math.ceil(target/2)},()=>item(d.rarity));s.showcase=Array.from({length:Math.floor(target/2)},()=>item(d.rarity));break;
 case 'stockVariety':s.inventory=d.rarities.slice(0,target).map(r=>item(r));break;
+case 'ownedVariety':s.inventory=d.rarities.slice(0,Math.min(4,target)).map(r=>item(r));s.showcase=d.rarities.slice(4,target).map(r=>item(r));break;
 default:throw Error(d.metric)}return s}
 assert.equal(defs.length,48);assert.equal(new Set(defs.map(d=>d.id)).size,48);
+const rainbow=defs.find(d=>d.id==='succes-50');
+const mixed=sample(rainbow,7);assert.equal(progress(rainbow,stats(mixed)).complete,true);
+mixed.showcase=mixed.showcase.filter(i=>i.rarity!=='unique');assert.equal(progress(rainbow,stats(mixed)).complete,false);
+mixed.showcase.push({...item('unique'),testPreview:true});assert.equal(progress(rainbow,stats(mixed)).complete,false);
+const allDisplay=fresh();allDisplay.showcase=rainbow.rarities.map(r=>item(r));assert.equal(progress(rainbow,stats(allDisplay)).complete,true);
+const allStock=fresh();allStock.inventory=rainbow.rarities.map(r=>item(r));assert.equal(progress(rainbow,stats(allStock)).complete,true);
+assert.equal(defs.find(d=>d.id==='succes-48').name,'Dixballage rarussi !');
 for(const d of defs){
  assert.equal(progress(d,stats(sample(d,d.target-1))).complete,false,`${d.id} below`);
  const s=sample(d,d.target);assert.equal(progress(d,stats(s)).complete,true,`${d.id} threshold`);

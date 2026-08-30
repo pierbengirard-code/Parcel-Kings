@@ -181,7 +181,7 @@ const today=()=>new Date().toISOString().slice(0,10);
 if(state.dailyDate!==today())state.dailyClaimed=false;
 function hydrateSave(saved){
   const loaded={...freshState(),...(saved||{}),saveVersion:SAVE_VERSION};
-  const renameToday=name=>({"Collier à perles":"Collier de perles","Débardeur":"Débardeur avec manches"})[name]||name;
+  const renameToday=name=>({"Collier à perles":"Collier de perles","Débardeur":"Débardeur avec manches","Fer a lisser PB&L":"Fer à lisser PB&L","Sèche linge pour nudistes":"Sèche linge pour nudiste"})[name]||name;
   ["discoveredItems","collectionDiscoveries","foundUniques"].forEach(key=>{
     if(Array.isArray(loaded[key]))loaded[key]=[...new Set(loaded[key].map(renameToday))];
   });

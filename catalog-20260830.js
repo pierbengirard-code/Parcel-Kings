@@ -202,7 +202,7 @@ const TODAY_OBJECT_CATALOG = [
     "rarity": "sans-rarete"
   },
   {
-    "name": "Sèche linge pour nudistes",
+    "name": "Sèche linge pour nudiste",
     "image": "assets/objects/seche-linge-nudistes.png",
     "cat": "Maison",
     "rarity": "peu-commun"
@@ -310,7 +310,7 @@ const TODAY_OBJECT_CATALOG = [
     "rarity": "courant"
   },
   {
-    "name": "Fer a lisser PB&L",
+    "name": "Fer à lisser PB&L",
     "image": "assets/objects/fer-lisser-pbl.png",
     "cat": "Maison",
     "rarity": "sans-rarete"

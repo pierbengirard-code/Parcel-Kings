@@ -311,7 +311,7 @@ const ACHIEVEMENTS = [
   },
   {
     "id": "succes-48",
-    "name": "Dixballage raérussi !",
+    "name": "Dixballage rarussi !",
     "description": "Avoir 10 objets Rare dans le stock",
     "criteria": "Avoir au moins 10 objets Rare dans le stock",
     "metric": "stockRarity",
@@ -335,9 +335,9 @@ const ACHIEVEMENTS = [
   {
     "id": "succes-50",
     "name": "Arc-en-ciel",
-    "description": "Avoir un objet de chaque rareté dans le stock",
-    "criteria": "Avoir au moins un objet de chaque rareté (légendaire et uniques inclus) dans le stock",
-    "metric": "stockVariety",
+    "description": "Avoir un objet de chaque rareté dans le stock ou la vitrine",
+    "criteria": "Avoir au moins un objet de chaque rareté (légendaire et uniques inclus) dans le stock ou dans la vitrine. Le stock et la vitrine sont tous les deux pris en compte.",
+    "metric": "ownedVariety",
     "rarities": [
       "sans-rarete",
       "courant",
@@ -427,6 +427,7 @@ function achievementProgress(def,stats){
   let value;
   if(def.metric==='badge')value=stats.badges.has(def.badge)?1:0;
   else if(def.metric==='stockVariety')value=def.rarities.filter(r=>stats.stockRarity[r]>0).length;
+  else if(def.metric==='ownedVariety')value=def.rarities.filter(r=>stats.ownedRarity[r]>0).length;
   else if(def.rarity)value=stats[def.metric][def.rarity]||0;
   else value=stats[def.metric]||0;
   return {value,complete:value>=def.target&&(def.minValue==null||stats.showcaseValue>=def.minValue)};
@@ -466,6 +467,6 @@ function renderAchievements(){
     const currency=['spent','sales','showcaseValue'].includes(def.metric)?' $':'';
     const detail=earned?'Débloqué · définitivement acquis':`${number(Math.min(progress.value,def.target))} / ${number(def.target)}${currency}`;
     const extra=!earned&&def.minValue?` · Vitrine : ${number(stats.showcaseValue)} / ${number(def.minValue)} $`:'';
-    return `<article class="achievement-card ${earned?'earned':''}"><div class="achievement-emblem" aria-hidden="true">${earned?'✦':'◇'}</div><div class="achievement-content"><small>${earned?'SUCCÈS ACQUIS':'À DÉBLOQUER'}</small><h3>${achievementEscape(def.name)}</h3><p>${achievementEscape(def.description)}</p><progress max="100" value="${percent}" aria-label="Progression : ${achievementEscape(def.name)}"></progress><div class="achievement-progress">${detail}${extra}</div><details><summary>Voir le critère exact</summary><p>${achievementEscape(def.criteria)}</p></details></div></article>`;
+    return `<article class="achievement-card ${earned?'earned':''}"><div class="achievement-emblem" aria-hidden="true">${earned?'✦':'◇'}</div><div class="achievement-content"><small>${earned?'SUCCÈS ACQUIS':'À DÉBLOQUER'}</small><h3>${achievementEscape(def.name)}</h3><p>${achievementEscape(def.description)}</p><progress max="100" value="${percent}" aria-label="Progression : ${achievementEscape(def.name)}"></progress><div class="achievement-progress">${detail}${extra}</div></div></article>`;
   }).join('');
 }
