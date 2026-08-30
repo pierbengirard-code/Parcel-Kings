@@ -585,6 +585,11 @@ body{background-attachment:scroll!important}
 .collection-chevron{display:none!important}
 .object-image[src*="affiche-rrrrrr"],.collection-object img[src*="affiche-rrrrrr"]{width:78%!important;height:78%!important;max-width:78%!important;max-height:78%!important;margin:auto!important;object-fit:contain!important}
 
+/* Le serpent n'a pas besoin du décalage vers le titre appliqué aux autres objets. */
+.reveal-item .object-inspector:has(img[src*="serpent-venimeux"]){margin-top:0}
+.reveal-item .object-inspector:has(img[src*="serpent-venimeux"]) .inspector-object{top:0;padding-top:18px;padding-bottom:18px}
+.reveal-item .object-inspector:has(img[src*="serpent-venimeux"]):after{transform:none}
+
 /* Actions permanentes et compte à rebours replacés dans leur contexte. */
 .topbar-daily{position:relative;padding:10px 13px;border:1px solid rgba(168,85,247,.45);border-radius:5px;background:linear-gradient(180deg,#2c2141,#191328);color:#eee8f7;font:800 10px "DM Sans";letter-spacing:.5px;text-transform:uppercase;cursor:pointer;transition:.2s}.topbar-daily:hover{border-color:var(--lime);box-shadow:0 0 16px rgba(215,255,67,.1);transform:translateY(-1px)}.topbar-daily #giftDot{vertical-align:middle}
 .depot-title-line{display:flex;align-items:center;gap:17px;flex-wrap:wrap}.arrival-timer{display:inline-flex;align-items:center;gap:7px;padding:7px 10px;border:1px solid rgba(168,85,247,.36);border-radius:5px;background:rgba(35,27,54,.68);color:#a9a0b7;font-size:8px;font-weight:900;letter-spacing:1.2px;white-space:nowrap}.arrival-timer b{color:var(--lime);font-size:11px;letter-spacing:.5px}
