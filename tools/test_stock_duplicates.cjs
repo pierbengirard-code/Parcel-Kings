@@ -1,0 +1,10 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const source=fs.readFileSync('game.js','utf8');
+const context={};vm.createContext(context);vm.runInContext(source.split(/\r?\n/).find(l=>l.startsWith('function stockDuplicates(')),context);
+const items=[{id:1,image:'a',value:1},{id:2,image:'b',value:9},{id:3,image:'a',value:50}];
+assert.deepEqual(context.stockDuplicates(items).map(i=>i.id),[1,3]);
+assert.equal(items.length,3);assert.equal(context.stockDuplicates([]).length,0);
+assert.equal(context.stockDuplicates(items.slice(0,2)).length,0);
+assert.equal(context.stockDuplicates([{name:'a'},{name:'a'}]).length,2);
+assert.equal(context.stockDuplicates([{uniqueKey:'a',name:'old'},{uniqueKey:'a',name:'new'}]).length,2);
+console.log('Filtre doublons : tous les exemplaires, valeurs différentes, stock vide et retrait du dernier doublon OK.');

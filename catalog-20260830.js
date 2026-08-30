@@ -166,7 +166,7 @@ const TODAY_OBJECT_CATALOG = [
     "rarity": "sans-rarete"
   },
   {
-    "name": "Lot d’équipement pour chasseur",
+    "name": "Lot d’équipements pour chasseur",
     "image": "assets/objects/equipement-chasseur.png",
     "cat": "Loisir",
     "rarity": "courant"
