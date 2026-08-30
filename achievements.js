@@ -412,15 +412,67 @@ const ACHIEVEMENTS = [
     "target": 7,
     "rarity": "unique"
   }
+,
+{
+  "id": "succes-distinct-100",
+  "name": "Un petit tas pour l'Homme",
+  "description": "Avoir 100 objets différents",
+  "criteria": "Avoir au moins 100 objets différents dans le stock ou dans la vitrine. Toutes raretées prises en compte. Le stock et la vitrine sont tous les deux pris en compte.",
+  "metric": "ownedDistinct",
+  "target": 100
+},
+{
+  "id": "succes-distinct-200",
+  "name": "J'aime la variété",
+  "description": "Avoir 200 objets différents",
+  "criteria": "Avoir au moins 200 objets différents dans le stock ou dans la vitrine. Toutes raretées prises en compte. Le stock et la vitrine sont tous les deux pris en compte.",
+  "metric": "ownedDistinct",
+  "target": 200
+},
+{
+  "id": "succes-distinct-300",
+  "name": "C'est Sparte ici",
+  "description": "Avoir 300 objets différents",
+  "criteria": "Avoir au moins 300 objets différents dans le stock ou dans la vitrine. Toutes raretées prises en compte. Le stock et la vitrine sont tous les deux pris en compte.",
+  "metric": "ownedDistinct",
+  "target": 300
+},
+{
+  "id": "succes-distinct-400",
+  "name": "La caverne d'Ali là bas",
+  "description": "Avoir 400 objets différents",
+  "criteria": "Avoir au moins 400 objets différents dans le stock ou dans la vitrine. Toutes raretées prises en compte. Le stock et la vitrine sont tous les deux pris en compte.",
+  "metric": "ownedDistinct",
+  "target": 400
+},
+{
+  "id": "succes-distinct-500",
+  "name": "Box en Stock",
+  "description": "Avoir 500 objets différents",
+  "criteria": "Avoir au moins 500 objets différents dans le stock ou dans la vitrine. Toutes raretées prises en compte. Le stock et la vitrine sont tous les deux pris en compte.",
+  "metric": "ownedDistinct",
+  "target": 500
+},
+{
+  "id": "succes-value-1000",
+  "name": "Ça vaut son pesant de cacahuètes",
+  "description": "Avoir un objet d'une valeur d'au moins 1000 crédits",
+  "criteria": "Avoir un objet d'une valeur d'au moins 1000$ dans le stock ou dans la vitrine. Toutes raretées prises en compte. Le stock et la vitrine sont tous les deux pris en compte.",
+  "metric": "ownedMaxValue",
+  "target": 1000
+}
 ];
 
 function achievementStats(s){
   const stock=(s.inventory||[]).filter(i=>!i.testPreview),showcase=(s.showcase||[]).filter(i=>!i.testPreview);
+  const owned=[...stock,...showcase];
   const rarity=i=>({normal:'sans-rarete',commun:'courant',inhabituel:'peu-commun','légendaire':'legendaire'})[i.rarity]||i.rarity;
   const counts=items=>items.reduce((out,i)=>{const key=rarity(i);out[key]=(out[key]||0)+1;return out},{});
   const duplicates=items=>{const counts=new Map();for(const i of items){const key=i.uniqueKey||i.image||i.name;counts.set(key,(counts.get(key)||0)+1)}return Math.max(0,...counts.values())};
   return {opened:Number(s.cartonsOpened)||0,spent:Number(s.parcelSpending)||0,sales:Number(s.totalSales)||0,
     stock:stock.length,showcase:showcase.length,showcaseValue:showcase.reduce((sum,i)=>sum+(Number(i.value)||0),0),
+    ownedDistinct:new Set(owned.map(i=>i.uniqueKey||i.image||i.name).filter(Boolean)).size,
+    ownedMaxValue:owned.reduce((max,i)=>Math.max(max,Number(i.value)||0),0),
     stockDuplicates:duplicates(stock),showcaseDuplicates:duplicates(showcase),stockRarity:counts(stock),ownedRarity:counts([...stock,...showcase]),badges:new Set(s.badges||[])};
 }
 function achievementProgress(def,stats){
@@ -464,7 +516,7 @@ function renderAchievements(){
   grid.innerHTML=ACHIEVEMENTS.map(def=>{
     const earned=Object.prototype.hasOwnProperty.call(unlocks,def.id),progress=achievementProgress(def,stats);
     const percent=earned?100:Math.min(100,progress.value/def.target*100,def.minValue?stats.showcaseValue/def.minValue*100:100);
-    const currency=['spent','sales','showcaseValue'].includes(def.metric)?' $':'';
+    const currency=['spent','sales','showcaseValue','ownedMaxValue'].includes(def.metric)?' $':'';
     const detail=earned?'Débloqué · définitivement acquis':`${number(Math.min(progress.value,def.target))} / ${number(def.target)}${currency}`;
     const extra=!earned&&def.minValue?` · Vitrine : ${number(stats.showcaseValue)} / ${number(def.minValue)} $`:'';
     return `<article class="achievement-card ${earned?'earned':''}"><div class="achievement-emblem" aria-hidden="true">${earned?'✦':'◇'}</div><div class="achievement-content"><small>${earned?'SUCCÈS ACQUIS':'À DÉBLOQUER'}</small><h3>${achievementEscape(def.name)}</h3><p>${achievementEscape(def.description)}</p><progress max="100" value="${percent}" aria-label="Progression : ${achievementEscape(def.name)}"></progress><div class="achievement-progress">${detail}${extra}</div></div></article>`;
