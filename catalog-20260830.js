@@ -61,7 +61,7 @@ const TODAY_OBJECT_CATALOG = [
     "rarity": "rare"
   },
   {
-    "name": "Débardeur",
+    "name": "Débardeur avec manches",
     "image": "assets/objects/debardeur-manches-longues.png",
     "cat": "Maison",
     "rarity": "sans-rarete"
@@ -466,7 +466,7 @@ const TODAY_OBJECT_CATALOG = [
     "rarity": "sans-rarete"
   },
   {
-    "name": "Collier à perles",
+    "name": "Collier de perles",
     "image": "assets/objects/collier-perles.png",
     "cat": "Bijoux",
     "rarity": "courant"

@@ -1,5 +1,5 @@
-const CACHE_VERSION="box-or-bust-20260830-2219";
-const CORE=["./","./index.html","./jeu.html","./landing.css?v=2","./landing-performance.css?v=1","./styles.css?v=65","./catalog.js?v=5","./catalog-20260830.js?v=1","./game.js?v=90","./assets/backgrounds/depot-conteneur.png","./assets/boxes/colis-perdu.png","./assets/icons/box-or-bust.svg"];
+const CACHE_VERSION="box-or-bust-20260830-2341";
+const CORE=["./","./index.html","./jeu.html","./landing.css?v=2","./landing-performance.css?v=1","./styles.css?v=65","./achievements.css?v=1","./catalog.js?v=5","./catalog-20260830.js?v=2","./achievements.js?v=1","./game.js?v=92","./assets/backgrounds/depot-conteneur.png","./assets/boxes/colis-perdu.png","./assets/icons/box-or-bust.svg"];
 
 self.addEventListener("install",event=>{
   event.waitUntil(caches.open(CACHE_VERSION).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting()));

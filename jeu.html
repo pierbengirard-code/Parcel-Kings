@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=65">
+  <link rel="stylesheet" href="achievements.css?v=1">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/icons/box-or-bust.svg" type="image/svg+xml">
 </head>
@@ -57,6 +58,7 @@
       <button data-tab="showcase">Ma vitrine <span id="showcaseCount">0</span></button>
       <button data-tab="collections">Collection <span id="collectionCount">1</span></button>
       <button data-tab="badges">Badge <i class="tab-notification" id="badgeNotification" aria-label="Badge disponible"></i><span id="badgeCount">0</span></button>
+      <button data-tab="achievements">Succès <span id="achievementCount">0</span></button>
       <button data-tab="leaderboard">Classement</button>
     </nav>
 
@@ -111,6 +113,11 @@
       <div class="empty-state" id="emptyBadges"><span>🏅</span><h3>Aucun badge pour le moment</h3><p>Complète une collection finalisée pour obtenir ton premier trophée.</p><button class="primary" data-go="collections">Voir les collections</button></div>
     </section>
 
+    <section class="panel" id="achievements">
+      <div class="section-heading"><div><p class="eyebrow">CHAQUE COLIS ÉCRIT TON HISTOIRE</p><h2>Mes succès</h2></div><b id="achievementSummary">0 / 48 succès débloqués</b></div>
+      <p class="achievement-intro">Joue, collectionne et franchis de nouveaux paliers. Les succès se débloquent automatiquement et restent acquis, même après une revente.<small>Les dépenses en colis sont comptabilisées depuis l’ajout des succès. Les renouvellements du dépôt et les ouvertures de test ne comptent pas. Les autres critères reprennent les données disponibles dans ta sauvegarde.</small></p>
+      <div class="achievement-grid" id="achievementsGrid"></div>
+    </section>
     <section class="panel" id="leaderboard">
       <div class="section-heading"><div><p class="eyebrow">SAISON 01 · 12 JOURS</p><h2>Les rois de la revente</h2></div><div class="league">Ligue <b>Carton</b></div></div>
       <div class="ranking-switch" role="group" aria-label="Type de classement">
@@ -122,7 +129,7 @@
     </section>
   </main>
 
-  <footer class="site-version" aria-label="Version du site">Version 20260830-2219</footer>
+  <footer class="site-version" aria-label="Version du site">Version 20260830-2341</footer>
 
   <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
     <div class="modal" id="openingModal" role="dialog" aria-modal="true" aria-label="Ouverture du colis">
@@ -143,8 +150,10 @@
 
   <div class="toast" id="toast"></div>
   <script src="catalog.js?v=5"></script>
-  <script src="catalog-20260830.js?v=1"></script>
-  <script src="game.js?v=90"></script>
+  <script src="catalog-20260830.js?v=2"></script>
+  <aside class="achievement-notice" id="achievementNotice" role="status" aria-live="polite" hidden><strong></strong><span></span><button class="primary" id="viewAchievements">Voir mes succès</button><button class="achievement-dismiss" id="dismissAchievements" aria-label="Fermer la notification de succès">Fermer</button></aside>
+  <script src="achievements.js?v=1"></script>
+  <script src="game.js?v=92"></script>
   <script>if("serviceWorker" in navigator&&!/^(localhost|127\.0\.0\.1)$/.test(location.hostname))window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));</script>
 </body>
 </html>
