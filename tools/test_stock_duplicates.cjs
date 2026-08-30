@@ -1,6 +1,11 @@
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
 const source=fs.readFileSync('game.js','utf8');
 const context={};vm.createContext(context);vm.runInContext(source.split(/\r?\n/).find(l=>l.startsWith('function stockDuplicates(')),context);
+vm.runInContext(source.split(/\r?\n/).find(l=>l.startsWith('function groupedStockDuplicates(')),context);
+const mixed=[{id:1,image:'a',value:10},{id:2,image:'b',value:50},{id:3,image:'a',value:100},{id:4,image:'b',value:90},{id:5,image:'c',value:900}];
+assert.deepEqual(Array.from(context.groupedStockDuplicates(mixed),i=>i.id),[3,1,4,2],'group together, descending price inside each group');
+assert.deepEqual(mixed.map(i=>i.id),[1,2,3,4,5],'original inventory order preserved');
+assert.equal(context.groupedStockDuplicates([]).length,0);
 const items=[{id:1,image:'a',value:1},{id:2,image:'b',value:9},{id:3,image:'a',value:50}];
 assert.deepEqual(context.stockDuplicates(items).map(i=>i.id),[1,3]);
 assert.equal(items.length,3);assert.equal(context.stockDuplicates([]).length,0);
