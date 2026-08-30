@@ -181,6 +181,9 @@ const today=()=>new Date().toISOString().slice(0,10);
 if(state.dailyDate!==today())state.dailyClaimed=false;
 function hydrateSave(saved){
   const loaded={...freshState(),...(saved||{}),saveVersion:SAVE_VERSION};
+  const protractorName=name=>/^rapporteur(?:\s+(?:metal|métal|métallique|metallique))?$/i.test(name||"")?"Rapporteur":name;
+  ["discoveredItems","collectionDiscoveries","foundUniques"].forEach(key=>{if(Array.isArray(loaded[key]))loaded[key]=[...new Set(loaded[key].map(protractorName))]});
+  loaded.lastDrawnName=protractorName(loaded.lastDrawnName);
   const renameToday=name=>({"Collier à perles":"Collier de perles","Débardeur":"Débardeur avec manches","Fer a lisser PB&L":"Fer à lisser PB&L","Sèche linge pour nudistes":"Sèche linge pour nudiste","Lot d’équipement pour chasseur":"Lot d’équipements pour chasseur","Lot d'équipement pour chasseur":"Lot d’équipements pour chasseur"})[name]||name;
   ["discoveredItems","collectionDiscoveries","foundUniques"].forEach(key=>{
     if(Array.isArray(loaded[key]))loaded[key]=[...new Set(loaded[key].map(renameToday))];
@@ -196,6 +199,9 @@ function hydrateSave(saved){
     loaded[zone]=Array.isArray(loaded[zone])?loaded[zone]:[];
     loaded[zone]=loaded[zone].map(item=>{
       item={...item,name:renameToday(item.name)};
+      if(protractorName(item.name)==="Rapporteur"||item.image?.endsWith("/rapporteur-metal.png")){
+        item={...item,name:"Rapporteur",rarity:"rare",rarityLabel:"Rare",image:"assets/objects/rapporteur-metal.png",cat:"Scolaire",collection:"rentree-2026"};
+      }
       if(item.name==="Slip de bain Tina Arena"||item.image?.endsWith("/slip-bain-tina-arena.png")){
         item={...item,name:"Maillot de bain Tina Arena",image:"assets/objects/maillot-bain-tina-arena.png",cat:"Vêtements"};
       }

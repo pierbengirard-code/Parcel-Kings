@@ -144,9 +144,9 @@ const CATALOG_META = {
 };
 
 const RARITY_GROUPS = {
-  "sans-rarete": new Set(`biberon.png bombe-peinture-jaune.png chapeau-trop-grand.png cutter-jaune-noir.png frisbee-rouge.png gilet-jaune.png gourde-plastique-grise.png jeu-cartes.png lampe-torche.png lot-fourchettes.png niveau-bulle.png paire-claquettes.png pinceau-artiste.png rapporteur-metal.png tote-bag-marmotte.png truelle-neuve.png tube-colle-pbl.png`.split(" ")),
+  "sans-rarete": new Set(`biberon.png bombe-peinture-jaune.png chapeau-trop-grand.png cutter-jaune-noir.png frisbee-rouge.png gilet-jaune.png gourde-plastique-grise.png jeu-cartes.png lampe-torche.png lot-fourchettes.png niveau-bulle.png paire-claquettes.png pinceau-artiste.png tote-bag-marmotte.png truelle-neuve.png tube-colle-pbl.png`.split(" ")),
   "peu-commun": new Set(`aspirateur-pbl.png baskets-blanches-pbl.png bracelet-argent.png bracelet-cuir.png chaussures-randonnee.png chaussures-running.png costume-tigre.png couteau-chef-pbl.png fer-repasser-pbl.png gourde-metal-bleu-ciel.png kit-plongee.png mallette-affaires.png montre-digitale-pbl.png pate-thermique-pbl.png perceuse.png ponceuse-electrique.png raquette-tennis.png robe-princesse.png saxophone.png scie-sauteuse-pbl.png selle-cheval.png sweat-capuche-qualite.png tubes-peinture.png voiture-teleguidee.png`.split(" ")),
-  "rare": new Set(`chauve-souris-empaillee.png coupe-champion-quartier.png figurine-formule-1.png figurine-homme-lapin.png imprimante-3d-emballee.png lot-couteaux-azteques.png patins-roulettes-80.png statuette-tribale.png timbre-tour-eiffel.png`.split(" ")),
+  "rare": new Set(`rapporteur-metal.png chauve-souris-empaillee.png coupe-champion-quartier.png figurine-formule-1.png figurine-homme-lapin.png imprimante-3d-emballee.png lot-couteaux-azteques.png patins-roulettes-80.png statuette-tribale.png timbre-tour-eiffel.png`.split(" ")),
   "exceptionnel": new Set(`boucles-oreilles-lamas.png kimono-karate.png peluche-licorne.png statuette-oreille-cassee.png`.split(" "))
 };
 
