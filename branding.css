@@ -1,0 +1,5 @@
+/* Shared, transparent parcel logo; no animation or image clipping. */
+.brand,.landing-brand{flex-shrink:0}
+.brand .site-logo,.landing-brand .site-logo{display:block;width:90px;height:74px;object-fit:contain;flex-shrink:0}
+.brand:focus-visible,.landing-brand:focus-visible{outline:2px solid #d7ff43;outline-offset:3px;border-radius:4px}
+@media(max-width:560px){.brand .site-logo,.landing-brand .site-logo{width:74px;height:60px}}
