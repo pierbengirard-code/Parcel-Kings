@@ -194,7 +194,7 @@ const ITEMS = [
     "max": 4200
   },
   {
-    "name": "Montre de l'Aviateur",
+    "name": "Montre d'aviateur",
     "image": "assets/objects/montre-aviateur-unique.png",
     "cat": "Horlogerie",
     "rarity": "legendaire",
@@ -238,17 +238,17 @@ const ITEMS = [
     "max": 1998
   },
   {
-    "name": "Magazine de mots-fléchés",
+    "name": "Magazine de mots fléchés",
     "image": "assets/objects/magazine-mots-fleches.png",
     "cat": "Loisir",
     "rarity": "sans-rarete",
     "icon": "📰",
-    "fixedPrice": 9.99,
-    "min": 9.99,
-    "max": 9.99
+    "fixedPrice":10,
+    "min": 10,
+    "max": 10
   },
   {
-    "name": "Paire de chaussure",
+    "name": "Paire de baskets de champion",
     "image": "assets/objects/baskets-montantes.png",
     "cat": "Sport",
     "rarity": "legendaire",
@@ -287,7 +287,7 @@ const ITEMS = [
     "max": 650
   },
   {
-    "name": "Bocal à Anchois",
+    "name": "Bocal à anchois",
     "image": "assets/objects/bocal-anchois-vide.png",
     "cat": "Spirituel",
     "rarity": "unique",
@@ -366,7 +366,7 @@ const ITEMS = [
     "max": 28
   },
   {
-    "name": "Mug",
+    "name": "Mug lapin bélier roux",
     "image": "assets/objects/mug-lapin-belier.png",
     "cat": "Maison",
     "rarity": "sans-rarete",
@@ -728,7 +728,7 @@ const ITEMS = [
     "name": "Panneau entrée de ville · Abbeville",
     "image": "assets/objects/panneau-abbeville.png",
     "cat": "Loisir",
-    "rarity": "courant",
+    "rarity": "rare",
     "icon": "🪧",
     "min": 45,
     "max": 190
@@ -817,7 +817,7 @@ const ITEMS = [
     "max": 55
   },
   {
-    "name": "Chemise Safari",
+    "name": "Chemise safari",
     "image": "assets/objects/chemise-safari.png",
     "cat": "Vêtements",
     "rarity": "courant",
@@ -938,7 +938,7 @@ const ITEMS = [
     "max": 55
   },
   {
-    "name": "Lunettes connectées",
+    "name": "Paire de Lunettes connectées",
     "image": "assets/objects/lunettes-connectees.png",
     "cat": "Loisir",
     "rarity": "peu-commun",
@@ -995,7 +995,7 @@ const ITEMS = [
     "name": "Caquelon",
     "image": "assets/objects/caquelon.png",
     "cat": "Maison",
-    "rarity": "courant",
+    "rarity": "sans-rarete",
     "icon": "🫕",
     "min": 35,
     "max": 130
@@ -1194,14 +1194,14 @@ const ITEMS = [
     "max": 0
   },
   {
-    "name": "Agrafeuse Chantier",
+    "name": "Agrafeuse chantier",
     "image": "assets/objects/agrafeuse-chantier.png",
     "cat": "Scolaire",
     "rarity": "courant",
     "icon": "✏️"
   },
   {
-    "name": "Antivol Velo Vert",
+    "name": "Antivol de vélo",
     "image": "assets/objects/antivol-velo-vert.png",
     "cat": "Sport",
     "rarity": "courant",
@@ -1215,14 +1215,14 @@ const ITEMS = [
     "icon": "🏠"
   },
   {
-    "name": "Ballon Foot Annees 80",
+    "name": "Ballon de foot années 80",
     "image": "assets/objects/ballon-foot-annees-80.png",
     "cat": "Sport",
     "rarity": "courant",
     "icon": "🏅"
   },
   {
-    "name": "Baskets Blanches PB&L",
+    "name": "Baskets blanches PB&L",
     "image": "assets/objects/baskets-blanches-pbl.png",
     "cat": "Vêtements",
     "rarity": "peu-commun",
@@ -1259,46 +1259,48 @@ const ITEMS = [
     "collection": "rentree-2026"
   },
   {
-    "name": "Bombe Peinture Jaune",
+    "name": "Bombe de peinture Jaune",
     "image": "assets/objects/bombe-peinture-jaune.png",
     "cat": "Scolaire",
     "rarity": "sans-rarete",
     "icon": "✏️"
   },
   {
-    "name": "Bonnet Gris PB&L",
+    "name": "Bonnet gris PB&L",
     "image": "assets/objects/bonnet-gris-pbl.png",
     "cat": "Vêtements",
     "rarity": "courant",
     "icon": "👕"
   },
   {
-    "name": "Boucles Oreilles Lamas",
+    "name": "Boucles d'oreilles Lamas",
     "image": "assets/objects/boucles-oreilles-lamas.png",
     "cat": "Collection",
     "rarity": "exceptionnel",
     "icon": "🏺"
   },
   {
-    "name": "Bracelet Argent",
+    "name": "Bracelet argent",
     "image": "assets/objects/bracelet-argent.png",
     "cat": "Collection",
     "rarity": "peu-commun",
     "icon": "🏺"
   },
   {
-    "name": "Bracelet Cuir",
+    "name": "Bracelet cuir",
     "image": "assets/objects/bracelet-cuir.png",
     "cat": "Collection",
     "rarity": "peu-commun",
     "icon": "🏺"
   },
-  {
-    "name": "Bracelet Fantaisie",
+ {
+    "name": "Bracelet fantaisie",
     "image": "assets/objects/bracelet-fantaisie.png",
     "cat": "Collection",
-    "rarity": "courant",
+    "rarity": "sans-rarete",
     "icon": "🏺"
+    "multiplierMin": 0.2,
+    "multiplierMax": 0.4
   },
   {
     "name": "Cadenas en laiton",
@@ -1308,63 +1310,63 @@ const ITEMS = [
     "icon": "🏠"
   },
   {
-    "name": "Casque Velo",
+    "name": "Casque de vélo",
     "image": "assets/objects/casque-velo.png",
     "cat": "Sport",
     "rarity": "courant",
     "icon": "🏅"
   },
   {
-    "name": "Casquette Jaune PB&L",
+    "name": "Casquette jaune PB&L",
     "image": "assets/objects/casquette-jaune-pbl.png",
     "cat": "Vêtements",
     "rarity": "courant",
     "icon": "👕"
   },
   {
-    "name": "Casquette Trucker PB&L",
+    "name": "Casquette trucker PB&L",
     "image": "assets/objects/casquette-trucker-pbl.png",
     "cat": "Vêtements",
     "rarity": "courant",
     "icon": "👕"
   },
   {
-    "name": "Chapeau Trop Grand",
+    "name": "Chapeau trop Grand",
     "image": "assets/objects/chapeau-trop-grand.png",
     "cat": "Maison",
     "rarity": "sans-rarete",
     "icon": "🏠"
   },
   {
-    "name": "Chaussures Randonnee",
+    "name": "Chaussures de randonnée",
     "image": "assets/objects/chaussures-randonnee.png",
     "cat": "Vêtements",
     "rarity": "peu-commun",
     "icon": "👕"
   },
   {
-    "name": "Chaussures Running",
+    "name": "Chaussures de running",
     "image": "assets/objects/chaussures-running.png",
     "cat": "Vêtements",
     "rarity": "peu-commun",
     "icon": "👕"
   },
   {
-    "name": "Chauve Souris Empaillee",
+    "name": "Chauve souris empaillée",
     "image": "assets/objects/chauve-souris-empaillee.png",
     "cat": "Maison",
     "rarity": "rare",
     "icon": "🏠"
   },
   {
-    "name": "Chemise Carreaux",
+    "name": "Chemise à carreaux",
     "image": "assets/objects/chemise-carreaux.png",
     "cat": "Vêtements",
     "rarity": "courant",
     "icon": "👕"
   },
   {
-    "name": "Chemisette Zebre",
+    "name": "Chemisette zèbre",
     "image": "assets/objects/chemisette-zebre.png",
     "cat": "Vêtements",
     "rarity": "courant",
@@ -1378,28 +1380,28 @@ const ITEMS = [
     "icon": "🏺"
   },
   {
-    "name": "Costume Tigre",
+    "name": "Costume tigre",
     "image": "assets/objects/costume-tigre.png",
     "cat": "Vêtements",
     "rarity": "peu-commun",
     "icon": "👕"
   },
   {
-    "name": "Coupe Champion Quartier",
+    "name": "Coupe \"Champion du Quartier\"",
     "image": "assets/objects/coupe-champion-quartier.png",
     "cat": "Maison",
     "rarity": "rare",
     "icon": "🏠"
   },
   {
-    "name": "Couteau Chef PB&L",
+    "name": "Couteau de chef PB&L",
     "image": "assets/objects/couteau-chef-pbl.png",
     "cat": "Maison",
     "rarity": "peu-commun",
     "icon": "🏠"
   },
   {
-    "name": "Cutter Jaune Noir",
+    "name": "Cutter",
     "image": "assets/objects/cutter-jaune-noir.png",
     "cat": "Maison",
     "rarity": "sans-rarete",
@@ -1427,14 +1429,14 @@ const ITEMS = [
     "icon": "🎲"
   },
   {
-    "name": "Fer Repasser PB&L",
+    "name": "Fer à repasser PB&L",
     "image": "assets/objects/fer-repasser-pbl.png",
     "cat": "Maison",
     "rarity": "peu-commun",
     "icon": "🏠"
   },
   {
-    "name": "Figurine El Tigro Blanco",
+    "name": "Figurine \"El Tigro Blanco\"",
     "image": "assets/objects/figurine-el-tigro-blanco.png",
     "cat": "Collection",
     "rarity": "unique",
@@ -1449,35 +1451,35 @@ const ITEMS = [
     "icon": "🏺"
   },
   {
-    "name": "Figurine Homme Lapin",
+    "name": "Figurine Homme-Lapin",
     "image": "assets/objects/figurine-homme-lapin.png",
     "cat": "Collection",
     "rarity": "rare",
     "icon": "🏺"
   },
   {
-    "name": "Frisbee Rouge",
+    "name": "Frisbee rouge",
     "image": "assets/objects/frisbee-rouge.png",
     "cat": "Sport",
     "rarity": "sans-rarete",
     "icon": "🏅"
   },
   {
-    "name": "Gilet Jaune",
+    "name": "Gilet jaune",
     "image": "assets/objects/gilet-jaune.png",
     "cat": "Maison",
     "rarity": "sans-rarete",
     "icon": "🏠"
   },
   {
-    "name": "Gourde Metal Bleu Ciel",
+    "name": "Gourde",
     "image": "assets/objects/gourde-metal-bleu-ciel.png",
     "cat": "Maison",
     "rarity": "peu-commun",
     "icon": "🏠"
   },
   {
-    "name": "Gourde Plastique Grise",
+    "name": "Gourde en plastique",
     "image": "assets/objects/gourde-plastique-grise.png",
     "cat": "Maison",
     "rarity": "sans-rarete",
@@ -1491,49 +1493,49 @@ const ITEMS = [
     "icon": "📦"
   },
   {
-    "name": "Harnais Chien K9",
+    "name": "Harnais pour chien \"K9\"",
     "image": "assets/objects/harnais-chien-k9.png",
     "cat": "Maison",
     "rarity": "courant",
     "icon": "🏠"
   },
   {
-    "name": "Imprimante 3D Emballee",
+    "name": "Imprimante 3D emballée",
     "image": "assets/objects/imprimante-3d-emballee.png",
     "cat": "Technologie",
     "rarity": "rare",
     "icon": "📱"
   },
   {
-    "name": "Jeu Cartes",
+    "name": "Jeu de cartes",
     "image": "assets/objects/jeu-cartes.png",
     "cat": "Maison",
     "rarity": "sans-rarete",
     "icon": "🏠"
   },
   {
-    "name": "Kimono Karate",
+    "name": "Kimono de karate",
     "image": "assets/objects/kimono-karate.png",
     "cat": "Vêtements",
     "rarity": "exceptionnel",
     "icon": "👕"
   },
   {
-    "name": "Kit Plongee",
+    "name": "Kit de plongée",
     "image": "assets/objects/kit-plongee.png",
     "cat": "Sport",
     "rarity": "peu-commun",
     "icon": "🏅"
   },
   {
-    "name": "Lampe Torche",
+    "name": "Lampe torche",
     "image": "assets/objects/lampe-torche.png",
     "cat": "Maison",
     "rarity": "sans-rarete",
     "icon": "🏠"
   },
   {
-    "name": "Lot Casseroles",
+    "name": "Lot de casseroles",
     "image": "assets/objects/lot-casseroles.png",
     "cat": "Maison",
     "rarity": "courant",
@@ -1556,28 +1558,28 @@ const ITEMS = [
     "collection": "rentree-2026"
   },
   {
-    "name": "Lot Couteaux Azteques",
+    "name": "Lot de couteaux Azteques",
     "image": "assets/objects/lot-couteaux-azteques.png",
     "cat": "Maison",
     "rarity": "rare",
     "icon": "🏠"
   },
   {
-    "name": "Lot Fourchettes",
+    "name": "Lot de fourchettes",
     "image": "assets/objects/lot-fourchettes.png",
     "cat": "Maison",
     "rarity": "sans-rarete",
     "icon": "🏠"
   },
   {
-    "name": "Lunettes Aviateur",
+    "name": "Lunettes \"Aviateur\"",
     "image": "assets/objects/lunettes-aviateur.png",
     "cat": "Maison",
     "rarity": "courant",
     "icon": "🏠"
   },
   {
-    "name": "Mallette Affaires",
+    "name": "Mallette d'affaires",
     "image": "assets/objects/mallette-affaires.png",
     "cat": "Maison",
     "rarity": "peu-commun",
@@ -1680,14 +1682,14 @@ const ITEMS = [
     "collection": "maillots-villes"
   },
   {
-    "name": "Mariniere",
+    "name": "Marinière",
     "image": "assets/objects/mariniere.png",
     "cat": "Vêtements",
     "rarity": "courant",
     "icon": "👕"
   },
   {
-    "name": "Meuble Kit",
+    "name": "Meuble en kit",
     "image": "assets/objects/meuble-kit.png",
     "cat": "Maison",
     "rarity": "courant",
@@ -1701,56 +1703,56 @@ const ITEMS = [
     "icon": "🏠"
   },
   {
-    "name": "Montre Digitale PB&L",
+    "name": "Montre digitale PB&L",
     "image": "assets/objects/montre-digitale-pbl.png",
     "cat": "Collection",
     "rarity": "peu-commun",
     "icon": "🏺"
   },
   {
-    "name": "Mug au lapin bélier noir et blanc",
+    "name": "Mug lapin bélier noir et blanc",
     "image": "assets/objects/mug-lapin-noir-blanc.png",
     "cat": "Maison",
     "rarity": "courant",
     "icon": "🏠"
   },
   {
-    "name": "Mug au lapin bélier noir",
+    "name": "Mug lapin bélier noir",
     "image": "assets/objects/mug-lapin-noir.png",
     "cat": "Maison",
     "rarity": "courant",
     "icon": "🏠"
   },
   {
-    "name": "Niveau Bulle",
+    "name": "Niveau à bulle",
     "image": "assets/objects/niveau-bulle.png",
     "cat": "Maison",
     "rarity": "sans-rarete",
     "icon": "🏠"
   },
   {
-    "name": "Paire Claquettes",
+    "name": "Paire de claquettes",
     "image": "assets/objects/paire-claquettes.png",
     "cat": "Maison",
     "rarity": "sans-rarete",
     "icon": "🏠"
   },
   {
-    "name": "Pate Thermique PB&L",
+    "name": "Pâte Thermique PB&L",
     "image": "assets/objects/pate-thermique-pbl.png",
     "cat": "Maison",
     "rarity": "peu-commun",
     "icon": "🏠"
   },
   {
-    "name": "Patins Roulettes 80",
+    "name": "Patins à roulettes 80",
     "image": "assets/objects/patins-roulettes-80.png",
     "cat": "Sport",
     "rarity": "rare",
     "icon": "🏅"
   },
   {
-    "name": "Peluche Licorne",
+    "name": "Peluche de licorne",
     "image": "assets/objects/peluche-licorne.png",
     "cat": "Maison",
     "rarity": "exceptionnel",
@@ -1764,14 +1766,14 @@ const ITEMS = [
     "icon": "🏠"
   },
   {
-    "name": "Pince Multiprise",
+    "name": "Pince multiprise",
     "image": "assets/objects/pince-multiprise.png",
     "cat": "Maison",
     "rarity": "courant",
     "icon": "🏠"
   },
   {
-    "name": "Pinceau Artiste",
+    "name": "Pinceau d'artiste",
     "image": "assets/objects/pinceau-artiste.png",
     "cat": "Scolaire",
     "rarity": "sans-rarete",
@@ -1785,14 +1787,14 @@ const ITEMS = [
     "icon": "🎲"
   },
   {
-    "name": "Ponceuse Electrique",
+    "name": "Ponceuse électrique",
     "image": "assets/objects/ponceuse-electrique.png",
     "cat": "Maison",
     "rarity": "peu-commun",
     "icon": "🏠"
   },
   {
-    "name": "Pull Marin",
+    "name": "Pull marin",
     "image": "assets/objects/pull-marin.png",
     "cat": "Vêtements",
     "rarity": "courant",
@@ -1807,14 +1809,14 @@ const ITEMS = [
     "collection": "rentree-2026"
   },
   {
-    "name": "Raquette Tennis",
+    "name": "Raquette de tennis",
     "image": "assets/objects/raquette-tennis.png",
     "cat": "Sport",
     "rarity": "peu-commun",
     "icon": "🏅"
   },
   {
-    "name": "Robe Princesse",
+    "name": "Robe de princesse",
     "image": "assets/objects/robe-princesse.png",
     "cat": "Vêtements",
     "rarity": "peu-commun",
@@ -1828,7 +1830,7 @@ const ITEMS = [
     "icon": "🏠"
   },
   {
-    "name": "Scie Sauteuse PB&L",
+    "name": "Scie sauteuse PB&L",
     "image": "assets/objects/scie-sauteuse-pbl.png",
     "cat": "Maison",
     "rarity": "peu-commun",
@@ -1842,7 +1844,7 @@ const ITEMS = [
     "icon": "🏠"
   },
   {
-    "name": "Selle Cheval",
+    "name": "Selle de cheval",
     "image": "assets/objects/selle-cheval.png",
     "cat": "Sport",
     "rarity": "peu-commun",
@@ -1856,14 +1858,14 @@ const ITEMS = [
     "icon": "🏠"
   },
   {
-    "name": "Statuette Oreille Cassee",
+    "name": "Statuette \"Oreille Cassée\"",
     "image": "assets/objects/statuette-oreille-cassee.png",
     "cat": "Collection",
     "rarity": "exceptionnel",
     "icon": "🏺"
   },
   {
-    "name": "Statuette Tribale",
+    "name": "Statuette tribale",
     "image": "assets/objects/statuette-tribale.png",
     "cat": "Collection",
     "rarity": "rare",
@@ -1894,63 +1896,63 @@ const ITEMS = [
     "collection": "rentree-2026"
   },
   {
-    "name": "Sweat Capuche Qualite",
+    "name": "Sweat à capuche haut de gamme",
     "image": "assets/objects/sweat-capuche-qualite.png",
     "cat": "Vêtements",
     "rarity": "peu-commun",
     "icon": "👕"
   },
   {
-    "name": "Sweat Capuche Simple",
+    "name": "Sweat Capuche",
     "image": "assets/objects/sweat-capuche-simple.png",
     "cat": "Vêtements",
     "rarity": "courant",
     "icon": "👕"
   },
   {
-    "name": "Timbre Tour Eiffel",
+    "name": "Timbre \"Tour Eiffel\"",
     "image": "assets/objects/timbre-tour-eiffel.png",
     "cat": "Collection",
     "rarity": "rare",
     "icon": "🏺"
   },
   {
-    "name": "Tote Bag Marmotte",
+    "name": "Tote Bag  motif marmotte",
     "image": "assets/objects/tote-bag-marmotte.png",
     "cat": "Maison",
     "rarity": "sans-rarete",
     "icon": "🏠"
   },
   {
-    "name": "Truelle Neuve",
+    "name": "Truelle neuve",
     "image": "assets/objects/truelle-neuve.png",
     "cat": "Maison",
     "rarity": "sans-rarete",
     "icon": "🏠"
   },
   {
-    "name": "T-shirt Gris PB&L",
+    "name": "T-shirt gris PB&L",
     "image": "assets/objects/tshirt-gris-pbl.png",
     "cat": "Vêtements",
     "rarity": "courant",
     "icon": "👕"
   },
   {
-    "name": "Tube Colle PB&L",
+    "name": "Tube de colle PB&L",
     "image": "assets/objects/tube-colle-pbl.png",
     "cat": "Scolaire",
     "rarity": "sans-rarete",
     "icon": "✏️"
   },
   {
-    "name": "Tubes Peinture",
+    "name": "Tubes de peinture",
     "image": "assets/objects/tubes-peinture.png",
     "cat": "Scolaire",
     "rarity": "peu-commun",
     "icon": "✏️"
   },
   {
-    "name": "Voiture Teleguidee",
+    "name": "Voiture Téléguidée",
     "image": "assets/objects/voiture-teleguidee.png",
     "cat": "Maison",
     "rarity": "peu-commun",
@@ -1971,7 +1973,7 @@ const ITEMS = [
     "icon": "🏠"
   },
   {
-    "name": "Apprendre le code",
+    "name": "Livre \"Apprendre le code\"",
     "image": "assets/objects/apprendre-le-code.png",
     "cat": "Loisir",
     "rarity": "exceptionnel",
@@ -2099,7 +2101,7 @@ const ITEMS = [
     "icon": "🏺"
   },
   {
-    "name": "Wok",
+    "name": "Wok \"Toh-Ni\"",
     "image": "assets/objects/wok-toh-ni.png",
     "cat": "Maison",
     "rarity": "sans-rarete",
@@ -2142,7 +2144,7 @@ const ITEMS = [
     "icon": "🏠"
   },
   {
-    "name": "Endives en sachet",
+    "name": "Endives \"Yves Lande\"",
     "image": "assets/objects/sachet-cinq-endives.png",
     "cat": "Maison",
     "rarity": "sans-rarete",
@@ -2170,7 +2172,7 @@ const ITEMS = [
     "icon": "🎲"
   },
   {
-    "name": "Paire de lunette pour une éclipse",
+    "name": "Paire de lunettes pour une éclipse",
     "image": "assets/objects/lunettes-eclipse.png",
     "cat": "Maison",
     "rarity": "sans-rarete",
@@ -2324,7 +2326,7 @@ const ITEMS = [
     "icon": "🏠"
   },
   {
-    "name": "Legging Léopard",
+    "name": "Legging \"léopard\"",
     "image": "assets/objects/legging-leopard.png",
     "cat": "Vêtements",
     "rarity": "sans-rarete",
@@ -2338,7 +2340,7 @@ const ITEMS = [
     "icon": "👕"
   },
   {
-    "name": "Legging rétro",
+    "name": "Legging \"rétro\"",
     "image": "assets/objects/legging-retro.png",
     "cat": "Vêtements",
     "rarity": "peu-commun",
@@ -2422,7 +2424,7 @@ const ITEMS = [
     "icon": "👕"
   },
   {
-    "name": "Kilt Ecossais",
+    "name": "Kilt Écossais",
     "image": "assets/objects/kilt-ecossais.png",
     "cat": "Vêtements",
     "rarity": "rare",
@@ -2450,14 +2452,14 @@ const ITEMS = [
     "icon": "👕"
   },
   {
-    "name": "Sac bandouillère",
+    "name": "Sac \"bandouillère\"",
     "image": "assets/objects/sac-bandouliere.png",
     "cat": "Vêtements",
     "rarity": "peu-commun",
     "icon": "👕"
   },
   {
-    "name": "Serre-tête Oreilles-de-chat",
+    "name": "Serre-tête \"Oreilles-de-chat\"",
     "image": "assets/objects/serre-tete-chat.png",
     "cat": "Vêtements",
     "rarity": "sans-rarete",
@@ -2478,21 +2480,21 @@ const ITEMS = [
     "icon": "👕"
   },
   {
-    "name": "Crop-top super héro",
+    "name": "Crop-top super-héroïne",
     "image": "assets/objects/crop-top-super-hero.png",
     "cat": "Vêtements",
     "rarity": "exceptionnel",
     "icon": "👕"
   },
   {
-    "name": "Débardeur femme",
+    "name": "Débardeur pour femme",
     "image": "assets/objects/debardeur-femme.png",
     "cat": "Vêtements",
     "rarity": "sans-rarete",
     "icon": "👕"
   },
   {
-    "name": "Collier Ras-de-cou",
+    "name": "Collier ras-de-cou",
     "image": "assets/objects/collier-ras-cou.png",
     "cat": "Bijoux",
     "rarity": "sans-rarete",
@@ -2506,7 +2508,7 @@ const ITEMS = [
     "icon": "📦"
   },
   {
-    "name": "Collier Maillons de chaine",
+    "name": "Collier maillons de chaine",
     "image": "assets/objects/collier-maillons-coeur.png",
     "cat": "Bijoux",
     "rarity": "peu-commun",
@@ -2520,21 +2522,21 @@ const ITEMS = [
     "icon": "📦"
   },
   {
-    "name": "Foulard Bohemien",
+    "name": "Foulard bohémien",
     "image": "assets/objects/foulard-bohemienne.png",
     "cat": "Vêtements",
     "rarity": "sans-rarete",
     "icon": "👕"
   },
   {
-    "name": "Echarpe à franges",
+    "name": "Écharpe à franges",
     "image": "assets/objects/echarpe-franges.png",
     "cat": "Vêtements",
     "rarity": "sans-rarete",
     "icon": "👕"
   },
   {
-    "name": "Echarpe jacquard",
+    "name": "Écharpe à motifs",
     "image": "assets/objects/echarpe-jacquard.png",
     "cat": "Vêtements",
     "rarity": "courant",
