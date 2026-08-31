@@ -668,7 +668,7 @@ const ITEMS = [
     "max": 90
   },
   {
-    "name": "Jeu de société Ça fait 2",
+    "name": "Jeu de société \"Ça fait 2\"",
     "image": "assets/objects/jeu-ca-fait-2.png",
     "cat": "Loisir",
     "rarity": "exceptionnel",
@@ -2520,7 +2520,7 @@ const ITEMS = [
     "icon": "📦"
   },
   {
-    "name": "Foulard Bohemienne",
+    "name": "Foulard Bohemien",
     "image": "assets/objects/foulard-bohemienne.png",
     "cat": "Vêtements",
     "rarity": "sans-rarete",

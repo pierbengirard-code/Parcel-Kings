@@ -55,7 +55,7 @@ function hydrateSave(saved){
   const protractorName=name=>/^rapporteur(?:\s+(?:metal|métal|métallique|metallique))?$/i.test(name||"")?"Rapporteur":name;
   ["discoveredItems","collectionDiscoveries","foundUniques"].forEach(key=>{if(Array.isArray(loaded[key]))loaded[key]=[...new Set(loaded[key].map(protractorName))]});
   loaded.lastDrawnName=protractorName(loaded.lastDrawnName);
-  const renameToday=name=>({"Collier à perles":"Collier de perles","Débardeur":"Débardeur avec manches","Fer a lisser PB&L":"Fer à lisser PB&L","Sèche linge pour nudistes":"Sèche linge pour nudiste","Lot d’équipement pour chasseur":"Lot d’équipements pour chasseur","Lot d'équipement pour chasseur":"Lot d’équipements pour chasseur"})[name]||name;
+  const renameToday=name=>({"Foulard Bohemienne":"Foulard Bohemien","Jeu de société Ça fait 2":'Jeu de société "Ça fait 2"',"Collier à perles":"Collier de perles","Débardeur":"Débardeur avec manches","Fer a lisser PB&L":"Fer à lisser PB&L","Sèche linge pour nudistes":"Sèche linge pour nudiste","Lot d’équipement pour chasseur":"Lot d’équipements pour chasseur","Lot d'équipement pour chasseur":"Lot d’équipements pour chasseur"})[name]||name;
   ["discoveredItems","collectionDiscoveries","foundUniques"].forEach(key=>{
     if(Array.isArray(loaded[key]))loaded[key]=[...new Set(loaded[key].map(renameToday))];
   });
