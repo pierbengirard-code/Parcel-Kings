@@ -68,7 +68,7 @@ const LEGACY_ITEMS = [
   ,{name:"Poster de Tilk dans Stargate",icon:"🌌",image:"assets/objects/poster-tilk.png",cat:"Loisir",rarity:"exceptionnel",min:300,max:1400}
   ,{name:"Télévision cathodique",icon:"📺",image:"assets/objects/television-cathodique.png",cat:"Maison",rarity:"sans-rarete",min:8,max:55}
   ,{name:"Télévision 8K",icon:"📺",image:"assets/objects/television-8k.png",cat:"Maison",rarity:"sans-rarete",min:20,max:90}
-  ,{name:"Jeu de société Ça fait 2",icon:"🎲",image:"assets/objects/jeu-ca-fait-2.png",cat:"Loisir",rarity:"exceptionnel",min:280,max:1350}
+  ,{name:"Jeu de société \"Ça fait 2\"",icon:"🎲",image:"assets/objects/jeu-ca-fait-2.png",cat:"Loisir",rarity:"exceptionnel",min:280,max:1350}
   ,{name:"Câble RJ45 croisé",icon:"🧵",image:"assets/objects/cable-rj45-croise.png",cat:"Informatique",rarity:"sans-rarete",min:2,max:18}
   ,{name:"Carte ancienne du continent africain",icon:"🗺️",image:"assets/objects/carte-afrique-ancienne.png",cat:"Maison",rarity:"courant",min:35,max:160}
   ,{name:"Maillot de foot d'Auxerre",icon:"👕",image:"assets/objects/maillot-auxerre.png",cat:"Vêtements",rarity:"legendaire",uniqueKey:"maillot-auxerre-retro",min:700,max:4500}
