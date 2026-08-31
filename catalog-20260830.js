@@ -484,7 +484,7 @@ const TODAY_OBJECT_CATALOG = [
     "rarity": "rare"
   },
   {
-    "name": "Foulard Bohemienne",
+    "name": "Foulard Bohemien",
     "image": "assets/objects/foulard-bohemienne.png",
     "cat": "Vêtements",
     "rarity": "sans-rarete"
