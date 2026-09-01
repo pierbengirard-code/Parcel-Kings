@@ -1300,7 +1300,7 @@ const ITEMS = [
     "rarity": "sans-rarete",
     "icon": "🏺"
     "multiplierMin": 0.2,
-    "multiplierMax": 0.4
+    "multiplierMax": 0.4,
   },
   {
     "name": "Cadenas en laiton",
