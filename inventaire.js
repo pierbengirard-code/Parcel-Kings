@@ -1298,9 +1298,9 @@ const ITEMS = [
     "image": "assets/objects/bracelet-fantaisie.png",
     "cat": "Collection",
     "rarity": "sans-rarete",
-    "icon": "🏺"
+    "icon": "🏺",
     "multiplierMin": 0.2,
-    "multiplierMax": 0.4,
+    "multiplierMax": 0.4
   },
   {
     "name": "Cadenas en laiton",
