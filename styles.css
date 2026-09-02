@@ -561,20 +561,20 @@ body{background-attachment:scroll!important}
 .noise{display:none!important}
 .topbar,.tabs,.modal-backdrop,.confirm-backdrop,.badge-award-backdrop{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
 .item-card,.lot,.collection-object{content-visibility:auto;contain-intrinsic-size:260px;contain:layout paint style}
-.parcel-card-render{display:block;width:82%;height:82%;object-fit:contain;transform:translateY(-10px) rotateY(-8deg) rotateX(2deg);animation:parcelCardFloat 5.5s ease-in-out infinite;will-change:transform}
+.parcel-card-render{display:block;width:82%;height:82%;object-fit:contain;transform:translateY(-18px) rotateY(-8deg) rotateX(2deg);animation:parcelCardFloat 5.5s ease-in-out infinite;will-change:transform}
 .lot:nth-child(2) .parcel-card-render{animation-delay:-1.8s}.lot:nth-child(3) .parcel-card-render{animation-delay:-3.6s}
-@keyframes parcelCardFloat{0%,100%{transform:translateY(-10px) rotateY(-8deg) rotateX(2deg)}50%{transform:translateY(-17px) rotateY(8deg) rotateX(-1deg)}}
+@keyframes parcelCardFloat{0%,100%{transform:translateY(-18px) rotateY(-8deg) rotateX(2deg)}50%{transform:translateY(-25px) rotateY(8deg) rotateX(-1deg)}}
 .parcel-opening.open model-viewer{animation:suspenseParcelOptimized 1.1s ease both!important;filter:none!important}
 @keyframes suspenseParcelOptimized{0%{opacity:1}45%{opacity:.82}100%{opacity:.18}}
-@media(max-width:850px){.parcel-card-render{animation:none;transform:translateY(-10px) rotateY(-5deg)}}
+@media(max-width:850px){.parcel-card-render{animation:none;transform:translateY(-18px) rotateY(-5deg)}}
 
 /* Mode fluidité : effets conservés sous forme de dégradés, sans retraitement
    permanent des pixels par le GPU. */
 .hd-object-image,.object-image,.scene-object-image,.item-icon .object-image,.hero .scene-showcase .scene-display .hd-object-image,.hero .scene-showcase .scene-display .scene-object-image,.object-inspector .inspector-object,.object-inspector .hd-object-image,.object-inspector .reveal-object-image{filter:none!important}
 .object-inspector .inspector-glow{width:270px;height:150px;bottom:8px;filter:none!important;opacity:.48;background:radial-gradient(ellipse,color-mix(in srgb,var(--rarity) 36%,transparent),transparent 68%)}
 .object-inspector:before{box-shadow:none!important}
-.parcel-opening img{filter:none!important;transform:translateY(-12px)!important;transition:opacity .32s ease!important}
-.parcel-opening.open img{transform:translateY(-12px)!important;opacity:.12}
+.parcel-opening img{filter:none!important;transform:translateY(-25px)!important;transition:opacity .32s ease!important}
+.parcel-opening.open img{transform:translateY(-25px)!important;opacity:.12}
 .parcel-card-render{will-change:auto}
 .panel.active{animation:panelFadeFast .18s ease-out}
 @keyframes panelFadeFast{from{opacity:.7}to{opacity:1}}
