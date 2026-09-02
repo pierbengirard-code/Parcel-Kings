@@ -30,6 +30,8 @@
       </div>
       <button class="credit-button" id="addCreditsBtn">+ 1 000 $</button>
       <button class="topbar-daily" id="dailyBtn">Cadeau du jour <i id="giftDot"></i></button>
+      <a class="account-login" data-auth-login href="/api/auth/login">Se connecter</a>
+      <span class="account-user" data-auth-user hidden><b data-auth-name></b><a href="/api/auth/logout">Se déconnecter</a></span>
     </div>
     <button class="icon-button" id="soundBtn" title="Activer ou couper le son">♪</button>
   </header>
@@ -153,6 +155,7 @@
   <aside class="achievement-notice" id="achievementNotice" role="status" aria-live="polite" hidden><strong></strong><span></span><button class="primary" id="viewAchievements">Voir mes succès</button><button class="achievement-dismiss" id="dismissAchievements" aria-label="Fermer la notification de succès">Fermer</button></aside>
   <script src="achievements.js?v=4"></script>
   <script src="game.js?v=100"></script>
+  <script src="auth-client.js?v=1"></script>
   <script>if("serviceWorker" in navigator&&!/^(localhost|127\.0\.0\.1)$/.test(location.hostname))window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));</script>
 </body>
 </html>

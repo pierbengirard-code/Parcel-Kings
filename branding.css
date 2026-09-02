@@ -3,3 +3,4 @@
 .brand .site-logo,.landing-brand .site-logo{display:block;width:90px;height:74px;object-fit:contain;flex-shrink:0}
 .brand:focus-visible,.landing-brand:focus-visible{outline:2px solid #d7ff43;outline-offset:3px;border-radius:4px}
 @media(max-width:560px){.brand .site-logo,.landing-brand .site-logo{width:74px;height:60px}}
+.account-login,.account-user a{color:#caff29;font-size:.78rem;font-weight:800;text-decoration:none;text-transform:uppercase;letter-spacing:.04em}.account-user{display:flex;align-items:center;gap:10px;font-size:.78rem}.account-user[hidden]{display:none}.account-user b{color:#fff}.landing-account{display:flex;align-items:center;gap:18px}@media(max-width:760px){.account-login{font-size:.68rem}.landing-account{gap:8px}.landing-header .account-login{display:none}}
