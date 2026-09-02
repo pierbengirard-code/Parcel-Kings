@@ -32,3 +32,31 @@ export async function upsertPlayer(user) {
   );
   return result.rows[0];
 }
+
+export async function getGameSave(playerId) {
+  const result = await pool.query(
+    `SELECT revision, save_version, state, updated_at FROM app.game_saves WHERE player_id = $1`,
+    [playerId]
+  );
+  return result.rows[0] || null;
+}
+
+export async function putGameSave(playerId, expectedRevision, saveVersion, state) {
+  const updated = await pool.query(
+    `UPDATE app.game_saves
+        SET revision = revision + 1, save_version = $3, state = $4, updated_at = now()
+      WHERE player_id = $1 AND revision = $2
+      RETURNING revision, save_version, updated_at`,
+    [playerId, expectedRevision, saveVersion, state]
+  );
+  if (updated.rows[0]) return updated.rows[0];
+  if (expectedRevision !== 0) return null;
+  const inserted = await pool.query(
+    `INSERT INTO app.game_saves (player_id, revision, save_version, state)
+     VALUES ($1, 1, $2, $3)
+     ON CONFLICT (player_id) DO NOTHING
+     RETURNING revision, save_version, updated_at`,
+    [playerId, saveVersion, state]
+  );
+  return inserted.rows[0] || null;
+}

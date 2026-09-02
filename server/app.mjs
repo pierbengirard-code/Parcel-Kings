@@ -5,7 +5,7 @@ import session from "express-session";
 import helmet from "helmet";
 import * as oidc from "openid-client";
 import connectPgSimple from "connect-pg-simple";
-import { pool, upsertPlayer } from "./db.mjs";
+import { getGameSave, pool, putGameSave, upsertPlayer } from "./db.mjs";
 
 const required = [
   "APP_ORIGIN",
@@ -32,6 +32,7 @@ const PgSession = connectPgSimple(session);
 app.set("trust proxy", 1);
 app.disable("x-powered-by");
 app.use(helmet({ contentSecurityPolicy: false }));
+app.use(express.json({ limit: "2mb" }));
 app.use(session({
   name: "boxorbust.sid",
   secret: process.env.SESSION_SECRET,
@@ -106,6 +107,43 @@ app.get("/api/auth/me", (request, response) => {
   response.json(request.session.user
     ? { authenticated: true, user: request.session.user }
     : { authenticated: false });
+});
+
+function requirePlayer(request, response, next) {
+  if (!request.session.user?.id) return response.status(401).json({ error: "Connexion requise." });
+  next();
+}
+
+app.get("/api/player/save", requirePlayer, async (request, response, next) => {
+  try {
+    response.set("Cache-Control", "no-store");
+    response.json({ save: await getGameSave(request.session.user.id) });
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.put("/api/player/save", requirePlayer, async (request, response, next) => {
+  try {
+    const expectedRevision = Number(request.body?.revision);
+    const saveVersion = Number(request.body?.saveVersion);
+    const savedState = request.body?.state;
+    if (!Number.isSafeInteger(expectedRevision) || expectedRevision < 0 ||
+        !Number.isSafeInteger(saveVersion) || saveVersion < 1 ||
+        !savedState || typeof savedState !== "object" || Array.isArray(savedState)) {
+      return response.status(400).json({ error: "Sauvegarde invalide." });
+    }
+    const saved = await putGameSave(request.session.user.id, expectedRevision, saveVersion, savedState);
+    if (!saved) {
+      return response.status(409).json({
+        error: "Sauvegarde plus récente détectée.",
+        save: await getGameSave(request.session.user.id)
+      });
+    }
+    response.json({ save: saved });
+  } catch (error) {
+    next(error);
+  }
 });
 
 app.get("/api/auth/logout", (request, response, next) => {

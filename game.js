@@ -234,4 +234,4 @@ $("#dismissAchievements").onclick=()=>$("#achievementNotice").hidden=true;
 if(inventoryFilter)inventoryFilter.onchange=()=>{inventoryDuplicatesOnly=inventoryFilter.value==="duplicates";inventoryQualityDescending=true;renderInventory();beep(430,.06)};
 if(showcaseFilter)showcaseFilter.onclick=()=>{showcaseQualityDescending=!showcaseQualityDescending;renderShowcase();beep(430,.06)};
 setInterval(()=>{timerSeconds--;if(timerSeconds<0){timerSeconds=240;generateLots();toast("Nouvel arrivage au dépôt !")}const m=String(Math.floor(timerSeconds/60)).padStart(2,"0"),s=String(timerSeconds%60).padStart(2,"0");$("#timer").textContent=`${m}:${s}`},1000);
-if(state.dailyClaimed)$("#giftDot").style.display="none";$("#soundBtn").textContent=state.sound?"♪":"×";updateAll();checkCollectionBadges();initGarage3D();initPersistentSave();
+if(state.dailyClaimed)$("#giftDot").style.display="none";$("#soundBtn").textContent=state.sound?"♪":"×";updateAll();checkCollectionBadges();initGarage3D();initPersistentSave().then(()=>window.dispatchEvent(new Event("boxorbust:local-save-ready")));
