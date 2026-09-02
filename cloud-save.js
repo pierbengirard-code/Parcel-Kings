@@ -38,10 +38,8 @@
     } catch (error) {
       if (error.status === 409 && error.result?.save) {
         revision = Number(error.result.save.revision);
-        const remote = error.result.save.state;
-        if ((Number(remote?.savedAt) || 0) > (Number(state.savedAt) || 0)) {
-          installState(remote, "Une progression plus récente a été restaurée.");
-        } else queued = true;
+        queued = false;
+        installState(error.result.save.state, "Une progression plus récente a été restaurée.");
       } else console.warn("Sauvegarde en ligne indisponible", error);
     } finally {
       writing = false;
@@ -51,10 +49,24 @@
 
   function scheduleCloudSave() {
     if (!enabled) return;
-    clearTimeout(timer); timer = setTimeout(writeCloud, 700);
+    clearTimeout(timer);
+    timer = setTimeout(() => { timer = null; writeCloud(); }, 700);
   }
 
   save = function cloudAwareSave() { saveLocally(); scheduleCloudSave(); };
+
+  async function refreshCloud() {
+    if (!enabled || writing || queued || timer || document.hidden) return;
+    try {
+      const result = await api("/api/player/save");
+      const remote = result.save;
+      if (!remote || Number(remote.revision) === revision) return;
+      revision = Number(remote.revision);
+      installState(remote.state, "Progression mise à jour depuis un autre appareil.");
+    } catch (error) {
+      if (error.status !== 401) console.warn("Actualisation de la progression impossible", error);
+    }
+  }
 
   async function initialize() {
     try {
@@ -82,5 +94,8 @@
   }
 
   window.addEventListener("boxorbust:local-save-ready", initialize, { once: true });
+  window.addEventListener("focus", refreshCloud);
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) refreshCloud(); });
+  setInterval(refreshCloud, 10_000);
   window.addEventListener("pagehide", () => { if (enabled && !writing) writeCloud(); });
 })();
