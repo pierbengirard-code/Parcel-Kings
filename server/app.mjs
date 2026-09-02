@@ -4,6 +4,8 @@ import express from "express";
 import session from "express-session";
 import helmet from "helmet";
 import * as oidc from "openid-client";
+import connectPgSimple from "connect-pg-simple";
+import { pool, upsertPlayer } from "./db.mjs";
 
 const required = [
   "APP_ORIGIN",
@@ -26,6 +28,7 @@ const port = Number(process.env.PORT || 3000);
 
 const config = await oidc.discovery(issuer, clientId, process.env.COGNITO_CLIENT_SECRET);
 const app = express();
+const PgSession = connectPgSimple(session);
 app.set("trust proxy", 1);
 app.disable("x-powered-by");
 app.use(helmet({ contentSecurityPolicy: false }));
@@ -34,6 +37,12 @@ app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
+  store: new PgSession({
+    pool,
+    schemaName: "app",
+    tableName: "user_sessions",
+    createTableIfMissing: true
+  }),
   cookie: {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
@@ -77,12 +86,14 @@ app.get("/api/auth/callback", async (request, response, next) => {
     });
     const claims = tokens.claims();
     if (!claims?.sub) throw new Error("Le compte Cognito ne contient pas d’identifiant utilisateur.");
-    request.session.user = {
+    const user = {
       id: claims.sub,
       username: claims["cognito:username"] || "",
       email: claims.email || "",
       emailVerified: claims.email_verified === true
     };
+    const player = await upsertPlayer(user);
+    request.session.user = { ...user, displayName: player.display_name || "" };
     delete request.session.oidc;
     request.session.save((error) => error ? next(error) : response.redirect("/jeu.html"));
   } catch (error) {
