@@ -29,10 +29,18 @@ export async function upsertPlayer(user) {
        email = EXCLUDED.email,
        email_verified = EXCLUDED.email_verified,
        last_login_at = now()
-     RETURNING id, username, email, email_verified, display_name, created_at, last_login_at`,
+     RETURNING id, username, email, email_verified, account_type, display_name, created_at, last_login_at`,
     [user.id, user.username, user.email, user.emailVerified]
   );
   return result.rows[0];
+}
+
+export async function getPlayerAccountType(playerId) {
+  const result = await pool.query(
+    `SELECT account_type FROM app.players WHERE id = $1`,
+    [playerId]
+  );
+  return result.rows[0]?.account_type || "NORMAL";
 }
 
 export async function getGameSave(playerId) {

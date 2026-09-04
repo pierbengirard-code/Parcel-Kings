@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=70">
+  <link rel="stylesheet" href="styles.css?v=71">
   <link rel="stylesheet" href="achievements.css?v=1">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/icons/box-or-bust-64.png" type="image/png">
@@ -28,8 +28,8 @@
         <div><span id="levelLabel">Niveau 1</span><span id="xpLabel">0 / 100 XP</span></div>
         <div class="progress"><i id="xpBar"></i></div>
       </div>
-      <button class="credit-button" id="addCreditsBtn">+ 1 000 $</button>
-      <button class="topbar-daily" id="dailyBtn">Cadeau du jour <i id="giftDot"></i></button>
+      <button class="credit-button" id="addCreditsBtn" data-admin-only hidden>+ 1 000 $</button>
+      <button class="topbar-daily" id="dailyBtn" disabled>Cadeau du jour <i id="giftDot"></i></button>
       <a class="account-login" data-auth-login href="/api/auth/login">Se connecter</a>
       <span class="account-user" data-auth-user hidden><b data-auth-name></b><a href="/api/auth/logout">Se déconnecter</a></span>
     </div>
@@ -78,13 +78,13 @@
       <div class="odds-panel">
         <h3>Probabilités par ouverture</h3>
         <div class="odds-grid">
-          <button class="odds sans-rarete" data-test-rarity="sans-rarete" title="Tester un objet Sans rareté"><i></i>Sans rareté <b>40 %</b><small>×0,2–0,8</small></button>
-          <button class="odds courant" data-test-rarity="courant" title="Tester un objet Courant"><i></i>Courant <b>30 %</b><small>×0,8–1</small></button>
-          <button class="odds peu-commun" data-test-rarity="peu-commun" title="Tester un objet Peu commun"><i></i>Peu commun <b>20,74 %</b><small>×1–1,5</small></button>
-          <button class="odds rare" data-test-rarity="rare" title="Tester un objet Rare"><i></i>Rare <b>6,5 %</b><small>×1,5–2</small></button>
-          <button class="odds exceptionnel" data-test-rarity="exceptionnel" title="Tester un objet Exceptionnel"><i></i>Exceptionnel <b>2,5 %</b><small>×2–5</small></button>
-          <button class="odds legendaire" data-test-rarity="legendaire" title="Tester un objet Légendaire"><i></i>Légendaire <b>0,25 %</b><small>×5–30</small></button>
-          <button class="odds unique" data-test-rarity="unique" title="Tester un objet Unique"><i></i>Unique <b>0,01 %</b><small>×30–50</small></button>
+          <button class="odds sans-rarete" data-test-rarity="sans-rarete" disabled><i></i>Sans rareté <b>40 %</b><small>×0,2–0,8</small></button>
+          <button class="odds courant" data-test-rarity="courant" disabled><i></i>Courant <b>30 %</b><small>×0,8–1</small></button>
+          <button class="odds peu-commun" data-test-rarity="peu-commun" disabled><i></i>Peu commun <b>20,74 %</b><small>×1–1,5</small></button>
+          <button class="odds rare" data-test-rarity="rare" disabled><i></i>Rare <b>6,5 %</b><small>×1,5–2</small></button>
+          <button class="odds exceptionnel" data-test-rarity="exceptionnel" disabled><i></i>Exceptionnel <b>2,5 %</b><small>×2–5</small></button>
+          <button class="odds legendaire" data-test-rarity="legendaire" disabled><i></i>Légendaire <b>0,25 %</b><small>×5–30</small></button>
+          <button class="odds unique" data-test-rarity="unique" disabled><i></i>Unique <b>0,01 %</b><small>×30–50</small></button>
         </div>
       </div>
     </section>
@@ -131,7 +131,7 @@
     </section>
   </main>
 
-  <footer class="site-version" aria-label="Version du site">Version 20260905-0011</footer>
+  <footer class="site-version" aria-label="Version du site">Version 20260905-0031</footer>
 
   <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
     <div class="modal" id="openingModal" role="dialog" aria-modal="true" aria-label="Ouverture du colis">
@@ -154,9 +154,9 @@
   <script src="inventaire.js?v=1"></script>
   <aside class="achievement-notice" id="achievementNotice" role="status" aria-live="polite" hidden><strong></strong><span></span><button class="primary" id="viewAchievements">Voir mes succès</button><button class="achievement-dismiss" id="dismissAchievements" aria-label="Fermer la notification de succès">Fermer</button></aside>
   <script src="achievements.js?v=4"></script>
-  <script src="game.js?v=101"></script>
+  <script src="game.js?v=102"></script>
   <script src="cloud-save.js?v=3"></script>
-  <script src="auth-client.js?v=1"></script>
+  <script src="auth-client.js?v=2"></script>
   <script>if("serviceWorker" in navigator&&!/^(localhost|127\.0\.0\.1)$/.test(location.hostname))window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));</script>
 </body>
 </html>

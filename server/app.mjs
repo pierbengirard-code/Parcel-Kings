@@ -5,7 +5,7 @@ import session from "express-session";
 import helmet from "helmet";
 import * as oidc from "openid-client";
 import connectPgSimple from "connect-pg-simple";
-import { getGameSave, pool, putGameSave, upsertPlayer } from "./db.mjs";
+import { getGameSave, getPlayerAccountType, pool, putGameSave, upsertPlayer } from "./db.mjs";
 
 const required = [
   "APP_ORIGIN",
@@ -94,7 +94,11 @@ app.get("/api/auth/callback", async (request, response, next) => {
       emailVerified: claims.email_verified === true
     };
     const player = await upsertPlayer(user);
-    request.session.user = { ...user, displayName: player.display_name || "" };
+    request.session.user = {
+      ...user,
+      displayName: player.display_name || "",
+      accountType: player.account_type
+    };
     delete request.session.oidc;
     request.session.save((error) => error ? next(error) : response.redirect("/jeu.html"));
   } catch (error) {
@@ -102,11 +106,15 @@ app.get("/api/auth/callback", async (request, response, next) => {
   }
 });
 
-app.get("/api/auth/me", (request, response) => {
-  response.set("Cache-Control", "no-store");
-  response.json(request.session.user
-    ? { authenticated: true, user: request.session.user }
-    : { authenticated: false });
+app.get("/api/auth/me", async (request, response, next) => {
+  try {
+    response.set("Cache-Control", "no-store");
+    if (!request.session.user?.id) return response.json({ authenticated: false });
+    request.session.user.accountType = await getPlayerAccountType(request.session.user.id);
+    response.json({ authenticated: true, user: request.session.user });
+  } catch (error) {
+    next(error);
+  }
 });
 
 function requirePlayer(request, response, next) {
