@@ -11,7 +11,9 @@
       loginLinks.forEach((element) => { element.hidden = true; });
       userBoxes.forEach((element) => {
         const name = element.querySelector("[data-auth-name]");
-        if (name) name.textContent = result.user.username || result.user.email || "Mon compte";
+        const playerName = result.user.username || result.user.email || "Mon compte";
+        const status = ["ADMIN", "VIP"].includes(accountType) ? ` (${accountType})` : "";
+        if (name) name.textContent = playerName + status;
         element.hidden = false;
       });
     })
