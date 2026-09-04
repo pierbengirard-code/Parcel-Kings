@@ -1,5 +1,6 @@
 (() => {
   let revision = 0, enabled = false, timer = null, writing = false, queued = false;
+  const CLOUD_OWNER_KEY = "boxOrBustCloudOwner";
   const saveLocally = save;
   const snapshot = () => JSON.parse(JSON.stringify(state));
 
@@ -72,22 +73,24 @@
     try {
       const me = await api("/api/auth/me");
       if (!me.authenticated) return;
+      const playerId = String(me.user?.id || "");
+      const previousOwner = localStorage.getItem(CLOUD_OWNER_KEY) || "";
       const result = await api("/api/player/save");
       const remote = result.save;
       if (!remote) {
-        enabled = true; await writeCloud();
-        toast("Progression de cet appareil associée à ton compte."); return;
+        if (previousOwner && previousOwner !== playerId) installState(freshState());
+        enabled = true;
+        await writeCloud();
+        localStorage.setItem(CLOUD_OWNER_KEY, playerId);
+        toast(previousOwner && previousOwner !== playerId
+          ? "Nouveau profil créé pour ce compte."
+          : "Progression de cet appareil associée à ton compte.");
+        return;
       }
       revision = Number(remote.revision);
-      const localTime = Number(state.savedAt) || 0;
-      const remoteTime = Number(remote.state?.savedAt) || 0;
-      if (remoteTime > localTime) installState(remote.state, "Progression du compte restaurée.");
-      else if (localTime > remoteTime) {
-        const useLocal = window.confirm("La progression de cet appareil est plus récente que celle du compte. L’importer dans le compte ?");
-        if (!useLocal) installState(remote.state, "Progression du compte restaurée.");
-      }
+      installState(remote.state, "Progression du compte restaurée.");
+      localStorage.setItem(CLOUD_OWNER_KEY, playerId);
       enabled = true;
-      if ((Number(state.savedAt) || 0) > remoteTime) await writeCloud();
     } catch (error) {
       if (error.status !== 401) console.warn("Initialisation de la sauvegarde en ligne impossible", error);
     }
